@@ -532,7 +532,8 @@ const SB_URL='https://tstkjjycdhbgciyocpgp.supabase.co',SB_KEY='eyJhbGciOiJIUzI1
 /* Récupération du mot de passe : GitHub Pages ne sert aucune route « /reset-password », le lien de l'e-mail doit donc
    ramener sur la page d'accueil. Cette URL doit AUSSI figurer dans Supabase > Authentication > URL Configuration
    (Site URL + Redirect URLs), sinon Supabase l'ignore et renvoie vers la Site URL. */
-const RESET_URL='https://nexoraappweb.github.io/';
+/* Site de PROJET GitHub Pages (dépôt « Le-Chardon-Bleu- ») : l'adresse contient le nom du dépôt ; la racine du domaine github.io est une 404. */
+const RESET_URL='https://nexoraappweb.github.io/Le-Chardon-Bleu-/';
 /* Hash lu AVANT createClient : supabase-js le consomme puis nettoie l'URL (#access_token=…&type=recovery ou #error=…) */
 const HASH0=new URLSearchParams(location.hash.replace(/^#/,''));
 const REC0=HASH0.has('access_token')&&HASH0.get('type')=='recovery',LERR=HASH0.has('error')||HASH0.has('error_code')||HASH0.has('error_description');
