@@ -276,6 +276,9 @@ footer .lg{rotate:calc(var(--p,.5)*300deg)}
 #adm label{display:grid;gap:.3rem;font-size:.88rem;margin:0}
 .pw2{position:relative;display:block}.pw2 input{padding-right:3rem}
 .pw2 button{position:absolute;right:.3rem;top:50%;translate:0 -50%;background:none;border:0;color:inherit;cursor:pointer;padding:.5rem;display:grid}
+/* récupération du mot de passe (admin) : réutilise .lgb / .lm / .pw2 / .btn, n'ajoute que 3 petites règles */
+.lm.ok{color:var(--a)}.rcn{margin:0;text-align:center;font-size:.9rem;opacity:.85}
+.rcl{justify-self:end;margin-top:-.4rem;background:none;border:0;padding:.2rem 0;font:inherit;font-size:.85rem;color:var(--a);text-decoration:underline;text-underline-offset:3px;cursor:pointer}.rcl:hover{opacity:.8}
 #an .br{padding:.3rem 1rem 1rem;color:var(--a);font-weight:900}
 #an button{display:flex;align-items:center;gap:.7rem}
 #adm svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -526,6 +529,13 @@ img();tabs();sc();
 (()=>{
 /* >>> À RENSEIGNER : URL du projet + clé PUBLIQUE (anon / publishable). JAMAIS la clé service_role. */
 const SB_URL='https://tstkjjycdhbgciyocpgp.supabase.co',SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzdGtqanljZGhiZ2NpeW9jcGdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTU1NjYxNjYsImV4cCI6MjExMTE0MjE2Nn0.dgcGxVO14B4BXoX9vM8xu24Nn-YgHUfeUhUkrJ-1WuI';
+/* Récupération du mot de passe : GitHub Pages ne sert aucune route « /reset-password », le lien de l'e-mail doit donc
+   ramener sur la page d'accueil. Cette URL doit AUSSI figurer dans Supabase > Authentication > URL Configuration
+   (Site URL + Redirect URLs), sinon Supabase l'ignore et renvoie vers la Site URL. */
+const RESET_URL='https://nexoraappweb.github.io/';
+/* Hash lu AVANT createClient : supabase-js le consomme puis nettoie l'URL (#access_token=…&type=recovery ou #error=…) */
+const HASH0=new URLSearchParams(location.hash.replace(/^#/,''));
+const REC0=HASH0.has('access_token')&&HASH0.get('type')=='recovery',LERR=HASH0.has('error')||HASH0.has('error_code')||HASH0.has('error_description');
 const sb=window.supabase&&!/VOTRE/.test(SB_URL+SB_KEY)?supabase.createClient(SB_URL,SB_KEY):null;
 const DEF={...IMG},ST=['nouvelle','confirmée','refusée','annulée'];
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -592,9 +602,11 @@ function modal({title,body,ok='Valider',danger,onOk}){return new Promise(res=>{
 const ask=(title,msg,ok)=>modal({title,body:`<p>${msg}</p>`,ok,danger:1,onOk:async()=>{}});
 
 /* connexion / garde */
-function loginView(msg){S.u=null;adm.classList.add('on');an.innerHTML='';ac.className='ctr';
- ac.innerHTML=`<form class="lgb" id="lg"><img src="logo.png" alt=""><h2>Espace administrateur</h2><p class="lm" role="alert"></p><label>E-mail<input type="email" name="em" autocomplete="username" required></label><label>Mot de passe<span class="pw2"><input type="password" name="pw" autocomplete="current-password" required><button type="button" aria-label="Afficher le mot de passe" aria-pressed="false">${svg('eye')}</button></span></label><button class="btn">Se connecter</button><button type="button" class="btn g" data-act="close">Retour au site</button></form>`;
- const f=$('#lg'),pw=f.elements.pw,eye=$('.pw2 button',f),lm=$('.lm',f);lm.textContent=msg||'';
+function loginView(msg,em,ok){RC.clr();S.u=null;adm.classList.add('on');an.innerHTML='';ac.className='ctr';
+ ac.innerHTML=`<form class="lgb" id="lg"><img src="logo.png" alt=""><h2>Espace administrateur</h2><p class="lm" role="alert"></p><label>E-mail<input type="email" name="em" autocomplete="username" required></label><label>Mot de passe<span class="pw2"><input type="password" name="pw" autocomplete="current-password" required><button type="button" aria-label="Afficher le mot de passe" aria-pressed="false">${svg('eye')}</button></span></label><button type="button" class="rcl">Mot de passe oublié ?</button><button class="btn">Se connecter</button><button type="button" class="btn g" data-act="close">Retour au site</button></form>`;
+ const f=$('#lg'),pw=f.elements.pw,eye=$('.pw2 button',f),lm=$('.lm',f);lm.textContent=msg||'';if(ok)lm.classList.add('ok');
+ if(em){f.elements.em.value=em;pw.focus()}
+ $('.rcl',f).onclick=()=>forgotView('',f.elements.em.value.trim());
  eye.onclick=()=>{const s=pw.type=='password';pw.type=s?'text':'password';eye.setAttribute('aria-pressed',s);eye.setAttribute('aria-label',s?'Masquer le mot de passe':'Afficher le mot de passe')};
  f.onsubmit=async ev=>{ev.preventDefault();if(!sb)return lm.textContent='Supabase n’est pas configuré (SB_URL et SB_KEY dans index.html).';
   const b=$('.btn',f);b.disabled=true;lm.textContent='';
@@ -604,10 +616,72 @@ function loginView(msg){S.u=null;adm.classList.add('on');an.innerHTML='';ac.clas
 async function gate(){adm.classList.add('on');
  if(!sb)return loginView('Supabase n’est pas configuré (SB_URL et SB_KEY dans index.html).');
  const {data:{session}}=await sb.auth.getSession();if(!session)return loginView();
+ if(RC.get())return recoveryView(session);   /* lien de récupération ouvert mais mot de passe pas encore changé : on impose le formulaire */
  const {data:ok,error}=await sb.rpc('is_admin');   /* vérifie la présence dans la table admins */
  if(error||ok!==true){await sb.auth.signOut();return loginView('Ce compte n’a pas les droits administrateur.')}
  S.u=session.user.email;go('dash')}
-sb&&sb.auth.onAuthStateChange(ev=>{if(ev=='SIGNED_OUT'&&S.u)loginView('Session expirée. Veuillez vous reconnecter.')});
+/* ---------- récupération du mot de passe administrateur ----------
+   1) forgotView   : saisie de l'e-mail → sb.auth.resetPasswordForEmail(mail,{redirectTo:RESET_URL})
+   2) e-mail Supabase : lien /auth/v1/verify → redirection vers RESET_URL#access_token=…&type=recovery (page d'accueil, aucune route inventée)
+   3) supabase-js lit les jetons, ouvre une session de récupération et émet PASSWORD_RECOVERY (onAuthStateChange)
+   4) recoveryView : nouveau mot de passe + confirmation → sb.auth.updateUser({password})
+   5) doneView     : confirmation, puis retour au formulaire de connexion administrateur */
+const RC={m:false, /* « récupération en cours » : persiste si la page est rechargée avant d'avoir changé le mot de passe */
+ get(){if(RC.m)return true;try{return localStorage.getItem('rcv')=='1'}catch(_){return false}},
+ set(){RC.m=true;try{localStorage.setItem('rcv','1')}catch(_){}},
+ clr(){RC.m=false;try{localStorage.removeItem('rcv')}catch(_){}}};
+if(REC0)RC.set();
+const card=(id,h,body)=>{S.u=null;adm.classList.add('on');an.innerHTML='';ac.className='ctr';
+ ac.innerHTML=`<form class="lgb" id="${id}"><img src="logo.png" alt=""><h2>${h}</h2>${body}</form>`;return $('#'+id,ac)};
+const pwf=(l,n)=>`<label>${l}<span class="pw2"><input type="password" name="${n}" autocomplete="new-password" minlength="8" maxlength="72" required><button type="button" aria-label="Afficher le mot de passe" aria-pressed="false">${svg('eye')}</button></span></label>`;
+const eyes=f=>$$('.pw2',f).forEach(w=>{const i=$('input',w),e=$('button',w);e.onclick=()=>{const s=i.type=='password';i.type=s?'text':'password';e.setAttribute('aria-pressed',s);e.setAttribute('aria-label',s?'Masquer le mot de passe':'Afficher le mot de passe')}});
+async function endRecovery(scope){RC.clr();try{await sb.auth.signOut({scope})}catch(_){}}   /* ferme la session de récupération */
+
+function forgotView(msg,em){
+ const f=card('fg','Mot de passe oublié',`<p class="rcn">Saisissez l’e-mail de votre compte administrateur : un lien pour choisir un nouveau mot de passe vous sera envoyé.</p><p class="lm" role="alert"></p><label>E-mail<input type="email" name="em" autocomplete="username" required></label><button class="btn">Envoyer le lien</button><button type="button" class="btn g">Retour à la connexion</button>`),lm=$('.lm',f),b=$('.btn',f);
+ const say=(t,ok)=>{lm.className=ok?'lm ok':'lm';lm.textContent=t};
+ f.elements.em.value=em||'';say(msg||'');
+ $('.btn.g',f).onclick=()=>loginView('',f.elements.em.value.trim());
+ f.onsubmit=async ev=>{ev.preventDefault();if(!sb)return say('Supabase n’est pas configuré (SB_URL et SB_KEY dans index.html).');
+  const mail=f.elements.em.value.trim();b.disabled=true;say('');
+  let error;try{({error}=await sb.auth.resetPasswordForEmail(mail,{redirectTo:RESET_URL}))}catch(x){error=x}
+  if(error){b.disabled=false;return say(/rate|seconds|too many|limit/i.test(error.message||'')?'Trop de demandes : patientez une minute avant de demander un nouveau lien.':'Envoi impossible : '+(error.message||error))}
+  say('Si cette adresse correspond à un compte administrateur, un e-mail contenant le lien vient d’être envoyé (pensez aux courriers indésirables). Le lien est à usage unique.',1);
+  setTimeout(()=>{b.disabled=false},60000)};   /* Supabase limite l'envoi à 1 e-mail par minute et par adresse */
+ f.elements.em.focus()}
+
+function recoveryView(ses){
+ if($('#rv',ac)&&adm.classList.contains('on'))return;   /* déjà affiché : ne pas effacer ce que l'utilisateur est en train de saisir */
+ const mail=ses&&ses.user&&ses.user.email||'';
+ const f=card('rv','Nouveau mot de passe',`<p class="rcn">${mail?'Compte : <b>'+esc(mail)+'</b><br>':''}Choisissez votre nouveau mot de passe (8 caractères minimum).</p><p class="lm" role="alert"></p>${pwf('Nouveau mot de passe','p1')}${pwf('Confirmer le mot de passe','p2')}<button class="btn">Enregistrer le mot de passe</button><button type="button" class="btn g">Annuler</button>`),lm=$('.lm',f),b=$('.btn',f);
+ eyes(f);f.elements.p1.focus();
+ $('.btn.g',f).onclick=async()=>{await endRecovery('local');loginView('Réinitialisation annulée.',mail)};
+ f.onsubmit=async ev=>{ev.preventDefault();lm.textContent='';
+  const p1=f.elements.p1.value,p2=f.elements.p2.value;
+  if(p1.length<8)return lm.textContent='Le mot de passe doit contenir au moins 8 caractères.';
+  if(p1!==p2)return lm.textContent='Les deux mots de passe ne sont pas identiques.';
+  b.disabled=true;
+  try{
+   const {data:{session}}=await sb.auth.getSession();   /* la session de récupération doit être toujours là au moment d'enregistrer */
+   if(!session){RC.clr();return forgotView('La session de récupération a expiré. Demandez un nouveau lien.',mail)}
+   const {error}=await sb.auth.updateUser({password:p1});
+   if(error){b.disabled=false;const m=error.message||'';
+    if(/session/i.test(m)){RC.clr();return forgotView('La session de récupération a expiré. Demandez un nouveau lien.',mail)}
+    return lm.textContent=/different|same/i.test(m)?'Le nouveau mot de passe doit être différent de l’ancien.':/weak|least|short|characters|easy|guess/i.test(m)?'Mot de passe refusé (trop court ou trop simple) : choisissez-en un plus robuste.':'Modification impossible : '+m}
+   await endRecovery('global');doneView(mail)   /* mot de passe changé : on ferme la session de récupération (et les anciennes sessions) */
+  }catch(x){b.disabled=false;lm.textContent='Modification impossible : '+(x.message||x)}}}
+
+function doneView(mail){
+ const f=card('rd','Mot de passe modifié',`<p class="lm ok" role="status">✓ Votre mot de passe a bien été mis à jour.</p><p class="rcn">Reconnectez-vous à l’espace administrateur avec votre nouveau mot de passe.</p><button type="button" class="btn">Retour à la connexion administrateur</button>`);
+ const b=$('.btn',f);b.onclick=()=>loginView('Mot de passe modifié. Connectez-vous avec votre nouveau mot de passe.',mail,1);b.focus()}
+
+sb&&sb.auth.onAuthStateChange((ev,ses)=>{
+ if(ev=='PASSWORD_RECOVERY'){RC.set();setTimeout(()=>recoveryView(ses),0)}   /* lien de l'e-mail ouvert : session de récupération active → formulaire (setTimeout : pas d'appel Supabase dans le callback) */
+ else if(ev=='SIGNED_OUT'&&S.u)loginView('Session expirée. Veuillez vous reconnecter.')});
+if(REC0&&sb)sb.auth.getSession().then(({data:{session}})=>{if(session)recoveryView(session)});   /* filet de sécurité : même résultat si l'événement a été émis avant l'abonnement (recoveryView ignore un 2e appel) */
+/* lien invalide ou expiré : Supabase renvoie RESET_URL#error=access_denied&error_code=otp_expired… → on propose d'en demander un nouveau */
+if(sb&&LERR){try{history.replaceState(null,'',location.pathname+location.search)}catch(_){}
+ forgotView('Ce lien de récupération est invalide ou a expiré. Demandez-en un nouveau ci-dessous.')}
 
 const VIEW={dash:vDash,dish:vDish,cat:vCat,img:vImg,set:vSet,res:vRes};
 async function go(v){
