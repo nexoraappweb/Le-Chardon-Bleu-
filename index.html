@@ -3,6 +3,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Le Chardon Bleu by La Marmotte Affamée — Valmeinier 1800</title>
 <meta name="description" content="Le Chardon Bleu by La Marmotte Affamée, au front de neige de Valmeinier 1800 : l’arrêt gourmand d’après-ski, spécialités savoyardes et crêpes. Venez hiberner avec nous !">
+<meta property="og:type" content="restaurant"><meta property="og:locale" content="fr_FR"><meta property="og:title" content="Le Chardon Bleu by La Marmotte Affamée — Valmeinier 1800"><meta property="og:description" content="Spécialités savoyardes et crêpes au front de neige de Valmeinier 1800."><meta name="theme-color" content="#2a1a10"><link rel="icon" href="logo.png" type="image/png"><link rel="apple-touch-icon" href="logo.png"><meta property="og:image" content="https://nexoraappweb.github.io/Le-Chardon-Bleu-/logo.png"><meta property="og:url" content="https://nexoraappweb.github.io/Le-Chardon-Bleu-/"><link rel="canonical" href="https://nexoraappweb.github.io/Le-Chardon-Bleu-/"><link rel="alternate" hreflang="fr" href="https://nexoraappweb.github.io/Le-Chardon-Bleu-/"><link rel="alternate" hreflang="en" href="https://nexoraappweb.github.io/Le-Chardon-Bleu-/?lang=en"><link rel="alternate" hreflang="x-default" href="https://nexoraappweb.github.io/Le-Chardon-Bleu-/">
 <style>
 :root{--c:#f6ecd6;--b:#2a1a10;--a:#d99a1c;--o:#8a4b1f;--e:cubic-bezier(.2,.8,.2,1)}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -212,7 +213,7 @@ form div:focus-within>label{color:var(--o);transition:color .3s}
 #rs.on{animation:pop .7s var(--e)}@keyframes pop{from{opacity:0;transform:translateY(18px) scale(.97)}}
 @media(max-width:900px){nav a{opacity:0;transform:translateY(40px) skewY(5deg);transition:opacity .35s,transform .35s}
 header.open nav a{opacity:1;transform:none;transition:opacity .7s var(--e) calc(.3s + var(--n)*.08s),transform .8s var(--e) calc(.3s + var(--n)*.08s)}
-nav::after{content:"Valmeinier 1800 · Front de neige";position:absolute;bottom:6vh;opacity:0;font-size:.9rem;color:var(--a);transition:opacity .6s}header.open nav::after{opacity:.9;transition-delay:.9s}
+nav::after{content:attr(data-s);position:absolute;bottom:6vh;opacity:0;font-size:.9rem;color:var(--a);transition:opacity .6s}header.open nav::after{opacity:.9;transition-delay:.9s}
 }
 @media(max-width:760px){.sp{grid-template-columns:1fr}.sp .ph:nth-child(n){margin-top:0;aspect-ratio:4/3;translate:none;rotate:0deg}
 .gl{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.gl .gi:nth-child(n){grid-area:auto;rotate:0deg;translate:none}.gl .gi:nth-child(1){grid-area:span 2/span 2}.lt,.bgt{display:none}}
@@ -262,13 +263,69 @@ footer .lg{rotate:calc(var(--p,.5)*300deg)}
 @media(max-width:900px){#rail{display:none}}
 @media(max-width:760px){.hero h1>.mk:nth-child(n){translate:none}}
 @media(prefers-reduced-motion:reduce){.sw{opacity:1!important}#rf>div{opacity:1!important;translate:none!important}}
+</style><style id="adm-css">
+/* BACK-OFFICE + ajouts Supabase (reprend la palette crème / marron / doré) */
+[hidden]{display:none!important}
+.dp{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:10px;margin-bottom:.8rem}
+#adm{font-size:15px;line-height:1.5}#adm small{opacity:.65}
+#ac.ctr{display:grid;place-items:center}
+#adm form{grid-template-columns:1fr;margin-top:0}
+.lgb{width:min(420px,92vw);display:grid;gap:1rem;background:#fff1;padding:2rem;border-radius:18px;border:1px solid #fff2;animation:pop .7s var(--e)}
+.lgb img{width:84px;border-radius:50%;margin:auto}.lgb h2{text-align:center;font-size:1.6rem}
+.lm,.me{min-height:1.3em;color:#ffb4a8;font-size:.9rem}.lm{text-align:center}
+#adm label{display:grid;gap:.3rem;font-size:.88rem;margin:0}
+.pw2{position:relative;display:block}.pw2 input{padding-right:3rem}
+.pw2 button{position:absolute;right:.3rem;top:50%;translate:0 -50%;background:none;border:0;color:inherit;cursor:pointer;padding:.5rem;display:grid}
+#an .br{padding:.3rem 1rem 1rem;color:var(--a);font-weight:900}
+#an button{display:flex;align-items:center;gap:.7rem}
+#adm svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.us{margin-top:auto;font-size:.8rem;opacity:.6;padding:.5rem 1rem;word-break:break-all}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.2rem}.hd h2{margin:0}
+.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin-bottom:1.5rem}
+.st>div{background:#fff1;border:1px solid #fff1;border-radius:16px;padding:1.1rem;transition:translate .3s var(--e),background .3s}.st>div:hover{translate:0 -3px;background:#fff2}
+.st b{display:block;font-size:2.3rem;line-height:1.1;color:var(--a)}.st svg{color:var(--a);float:right}
+.pn{background:#fff1;border-radius:16px;padding:1.2rem;margin-bottom:1.2rem}.pn h3{font-size:1.1rem;margin-bottom:.6rem;color:var(--a)}
+#sf{max-width:640px;display:grid;gap:1rem}
+.li{display:flex;justify-content:space-between;gap:1rem;padding:.5rem 0;border-bottom:1px solid #fff1}
+.tw{overflow-x:auto;border-radius:14px;border:1px solid #fff2}
+table{width:100%;border-collapse:collapse;min-width:620px}th,td{padding:.7rem .9rem;text-align:left;border-bottom:1px solid #fff1;vertical-align:middle}
+th{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;opacity:.6}tbody tr{transition:background .25s}tbody tr:hover{background:#fff1}.ta{text-align:right;white-space:nowrap}
+.ab{padding:.45rem .8rem;border-radius:8px;border:1px solid #fff3;background:none;color:inherit;font:inherit;font-size:.85rem;cursor:pointer;transition:background .25s,translate .25s var(--e)}.ab:hover{background:#fff2;translate:0 -1px}.ab.d:hover{background:#a33}
+.sw2{width:auto!important;accent-color:var(--a);scale:1.3}
+.tag{display:inline-block;padding:.12rem .65rem;border-radius:99px;font-size:.74rem;background:#fff2;white-space:nowrap}
+.tag.nouvelle{background:var(--a);color:var(--b)}.tag.confirmée{background:#2f7a4b}.tag.refusée,.tag.annulée{background:#7a2f2f}
+.fl2{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1rem}.fl2>*{flex:1 1 170px}
+.em{text-align:center;padding:2.5rem 1rem;opacity:.7}.ld{padding:3rem;text-align:center;animation:pls .8s infinite alternate}
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem}
+.pc{background:#fff1;border-radius:14px;overflow:hidden;transition:translate .3s var(--e)}.pc:hover{translate:0 -3px}
+.pc .th{aspect-ratio:4/3;background:#0004 center/cover;display:grid;place-items:center;font-size:.8rem;opacity:.9}.pc .i{padding:.8rem;display:grid;gap:.4rem}.pc .ar{margin:0}
+.mdl{position:fixed;inset:0;z-index:150;background:#000b;display:grid;place-items:center;padding:1rem;animation:fi .3s}@keyframes fi{from{opacity:0}}
+.mb{width:min(560px,100%);max-height:92vh;overflow:auto;background:#2a1a10;border:1px solid #fff2;border-radius:18px;padding:1.5rem;display:grid;gap:.9rem;animation:pop .5s var(--e)}
+.mb h3{font-size:1.4rem;color:var(--a)}.mb .ck{display:flex;gap:.6rem;align-items:center}.mb .ck input{width:auto}
+.ma{display:flex;gap:.6rem;justify-content:flex-end;flex-wrap:wrap}.pv{max-height:220px;width:100%;object-fit:cover;border-radius:10px}
+.dl{display:grid;grid-template-columns:auto 1fr;gap:.4rem 1rem}.dl dt{opacity:.6}
+@media(max-width:760px){#an .br,.us{display:none}#an{position:sticky;top:0;background:#1b100a;z-index:5;padding:.6rem}#ac{padding:1rem}}
+
+/* DESIGN : finitions, annonce, histoire, carte, barre mobile */
+::selection{background:var(--a);color:var(--b)}html{scrollbar-color:var(--a) #1b100a}.cr .eb{color:var(--o)}
+#an2{position:fixed;left:50%;bottom:calc(1.2rem + env(safe-area-inset-bottom));z-index:45;translate:-50% 180%;width:max-content;max-width:min(92vw,640px);display:flex;gap:.8rem;align-items:center;background:var(--a);color:var(--b);padding:.7rem .7rem .7rem 1.3rem;border-radius:99px;box-shadow:0 12px 40px #0008;font-size:.92rem;line-height:1.35;transition:translate .9s var(--e)}
+#an2.on{translate:-50% 0}#an2 button{flex:none;width:32px;height:32px;border-radius:50%;border:0;background:var(--b);color:var(--a);cursor:pointer}
+.hi{background:var(--b)}.hi .w{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center}.hi .w:has(.ph:not(.has)){grid-template-columns:1fr;max-width:760px}
+.hi .ph{aspect-ratio:4/5;border-radius:12px}.hi .ph:not(.has){display:none}.hi p{white-space:pre-line;max-width:54ch}
+.mp{margin-top:1.5rem;border-radius:14px;overflow:hidden;border:1px solid rgba(42,26,16,.2);aspect-ratio:16/7;min-height:260px;display:grid;place-items:center;background:rgba(42,26,16,.06);text-align:center;padding:1rem}.mp iframe{grid-area:1/1;width:100%;height:100%;border:0}
+#bar{display:none}
+@media(max-width:760px){.hi .w{grid-template-columns:1fr!important;gap:2rem}
+#bar{position:fixed;inset:auto 0 0;z-index:44;display:flex;gap:.6rem;padding:.6rem 4vw calc(.6rem + env(safe-area-inset-bottom));background:rgba(27,16,10,.96);backdrop-filter:blur(8px);border-top:1px solid rgba(217,154,28,.3)}#bar .btn{flex:1;text-align:center;padding:.8rem .5rem}
+#an2{bottom:calc(4.8rem + env(safe-area-inset-bottom))}footer{padding-bottom:6rem}}
+#lang{font:700 .78rem/1 Georgia,serif;letter-spacing:.12em;color:var(--c);background:none;border:1.5px solid var(--a);border-radius:99px;padding:.55rem .8rem;margin-left:1rem;cursor:pointer;position:relative;z-index:2;transition:background .3s,color .3s}#lang:hover{background:var(--a);color:var(--b)}nav{margin-left:auto}
+@media(max-width:900px){nav{margin-left:0}#lang{margin-left:auto;margin-right:.4rem}}
 </style><noscript><style>.rv,.mk>span,.wd>b,.di{opacity:1!important;transform:none!important}.sp .ph,.gl .gi,.bd,.fl,.sm{clip-path:none!important}.hs{opacity:1}#rf>div{opacity:1!important;translate:none!important}</style></noscript>
 </head>
 <body>
 <div id="bk" aria-hidden="true"><div class="ph bks on" data-k="bk1" data-l="fond fixe 1 : montagne, neige ou ambiance chalet"><i></i></div><div class="ph bks" data-k="bk2" data-l="fond fixe 2 : montagne, neige ou ambiance chalet"><i></i></div><div class="ph bks" data-k="bk3" data-l="fond fixe 3 : montagne, neige ou ambiance chalet"><i></i></div><div class="ph bks" data-k="bk4" data-l="fond fixe 4 : montagne, neige ou ambiance chalet"><i></i></div></div>
 <header><a href="#top"><img class="lg" src="logo.png" alt="Le Chardon Bleu by La Marmotte Affamée"></a>
-<nav><a href="#restaurant">Le restaurant</a><a href="#carte">La carte</a><a href="#specialites">Spécialités</a><a href="#terrasse">Terrasse</a><a href="#galerie">Galerie</a><a href="#infos">Infos</a><a href="#reservation">Réserver</a></nav>
-<button class="bg" aria-label="Menu"><i></i></button></header>
+<nav data-s="Valmeinier 1800 · Front de neige"><a href="#restaurant">Le restaurant</a><a href="#carte">La carte</a><a href="#specialites">Spécialités</a><a href="#terrasse">Terrasse</a><a href="#galerie">Galerie</a><a href="#infos">Infos</a><a href="#reservation">Réserver</a></nav>
+<button id="lang" type="button" lang="en" aria-label="Switch to English">EN</button><button class="bg" aria-label="Menu"><i></i></button></header>
 
 <section class="hero" id="top">
 <div class="hbg" data-p=".25"><div class="ph hs on" data-k="hero" data-l="vue d’ensemble : front de neige ou terrasse"><i></i></div><div class="ph hs" data-k="hero2" data-l="un plat signature"><i></i></div><div class="ph hs" data-k="hero3" data-l="ambiance chalet ou après-ski"><i></i></div></div>
@@ -283,18 +340,20 @@ footer .lg{rotate:calc(var(--p,.5)*300deg)}
 
 <section id="restaurant"><div class="w two">
 <div class="pw rv"><div class="ph tall" data-k="resto" data-l="Photo provisoire : salle ou ambiance chalet, à remplacer"><i></i></div><div class="ph sm" data-k="resto2" data-l="détail : plat, comptoir ou décor"><i></i></div><img class="seal" src="logo.png" alt=""></div>
-<div><h2 class="mk"><span>Les skis encore aux pieds, l’appétit déjà à table</span></h2>
+<div><span class="eb rv">Le restaurant</span><h2 class="mk"><span>Les skis encore aux pieds, l’appétit déjà à table</span></h2>
 <p class="rv" data-hl>Au front de neige de Valmeinier 1800, la Marmotte Affamée vous ouvre sa porte : une cuisine maison, des spécialités savoyardes, des crêpes qui réchauffent, et cette vue sur la montagne dont on ne se lasse pas. Entre amis ou en famille, installez-vous : on s’occupe du reste.</p>
 <div class="ft"><div class="rv" style="--d:.1s"><b>Cuisine maison</b><span>Des plats faits avec envie, à la montagnarde.</span></div><div class="rv" style="--d:.25s"><b>Vue montagne</b><span>Les sommets en face, dès la première bouchée.</span></div><div class="rv" style="--d:.4s"><b>Après-ski</b><span>Le bon réflexe en descendant des pistes.</span></div></div></div></div></section>
 
+<section class="hi" id="histoire" hidden><div class="w"><div><span class="eb rv">Le Chardon Bleu</span><h2 class="mk"><span>Notre histoire</span></h2><p class="rv" id="hip"></p></div><div class="ph rv" data-k="histoire" data-l="Photo : notre histoire"><i></i></div></div></section>
+
 <section class="bd" id="b1"><div class="ph" data-p=".15" data-k="band1" data-l="ambiance : neige, lumière de fin de journée"><i></i></div><h2 class="mk"><span>Après la neige, la table.</span></h2></section>
 <section id="carte" class="cr"><div class="w">
-<h2 class="mk"><span>La carte, version montagne</span></h2><p class="rv">Un plat qui réchauffe, une crêpe qui fait sourire : choisissez votre rayon et laissez-vous tenter.</p>
+<span class="eb rv">La carte</span><h2 class="mk"><span>La carte, version montagne</span></h2><p class="rv">Un plat qui réchauffe, une crêpe qui fait sourire : choisissez votre rayon et laissez-vous tenter.</p>
 <span class="demo">Données de démonstration : plats et prix à remplacer par la vraie carte</span>
 <div id="tabs"></div><div id="dishes"></div></div></section>
 
 <section id="specialites"><div class="w">
-<h2 class="mk"><span>Les spécialités</span></h2>
+<span class="eb rv">Spécialités savoyardes</span><h2 class="mk"><span>Les spécialités</span></h2>
 <p class="rv" data-hl style="max-width:48ch">Spécialités savoyardes et crêpes : ici, on cuisine pour celles et ceux qui ont faim d’air pur… et de gourmandise.</p>
 <div class="sp">
 <article class="ph rv" data-k="s1" data-l="Photo provisoire : spécialité savoyarde" style="--d:0s"><i></i><div><h3>Les savoyardes</h3><p>Le réconfort des chalets, bien chaud, à partager après la glisse.</p></div></article>
@@ -304,12 +363,12 @@ footer .lg{rotate:calc(var(--p,.5)*300deg)}
 
 <section id="terrasse" class="tr"><div class="tbg" data-p=".2"><div class="ph" style="position:absolute;inset:0" data-k="terrasse" data-l="Photo provisoire : terrasse et montagnes, à remplacer"><i></i></div></div>
 <div class="ph fl rv" data-k="terrasse2" data-l="vue depuis la terrasse"><i></i></div>
-<div class="w"><h2 class="mk"><span>La terrasse, face à la neige</span></h2>
+<div class="w"><span class="eb rv">La terrasse</span><h2 class="mk"><span>La terrasse, face à la neige</span></h2>
 <p class="rv" data-hl>Posez les skis, installez-vous face aux pistes et laissez la montagne faire le décor : la lumière d’hiver, les sommets en toile de fond et la joyeuse agitation de la station, juste à côté.</p>
 <div class="ch"><div class="rv"><b>Vue montagne</b><span>Les sommets, sans effort.</span></div><div class="rv" style="--d:.12s"><b>Front de neige</b><span>À deux pas des pistes.</span></div><div class="rv" style="--d:.24s"><b>Terrasse</b><span>Du grand air et de la lumière.</span></div><div class="rv" style="--d:.36s"><b>Après-ski</b><span>L’arrêt qui s’impose.</span></div></div></div></section>
 
 <section id="galerie" class="cr"><div class="w">
-<h2 class="mk"><span>Un avant-goût en images</span></h2>
+<span class="eb rv">La galerie</span><h2 class="mk"><span>Un avant-goût en images</span></h2>
 <p class="rv">Touchez une photo pour la voir en grand.</p>
 <div class="gl">
 <button class="ph gi w2 h2 rv" data-k="g1" data-l="Photo provisoire 1 : le restaurant"><i></i></button>
@@ -321,7 +380,7 @@ footer .lg{rotate:calc(var(--p,.5)*300deg)}
 </div></div></section>
 
 <section class="bd" id="b2"><div class="ph" data-p=".15" data-k="band2" data-l="ambiance : terrasse, convivialité"><i></i></div><h2 class="mk"><span>Les skis au repos, l’appétit en éveil.</span></h2></section>
-<section id="infos"><div class="w"><h2 class="mk"><span>Venir nous voir</span></h2>
+<section id="infos"><div class="w"><span class="eb rv">Infos pratiques</span><h2 class="mk"><span>Venir nous voir</span></h2>
 <div class="ig">
 <div class="ic rv"><h3>Adresse</h3><a data-f="adr"></a></div>
 <div class="ic rv" style="--d:.1s"><h3>Téléphone</h3><a data-f="tel"></a></div>
@@ -329,10 +388,10 @@ footer .lg{rotate:calc(var(--p,.5)*300deg)}
 <div class="ic rv" style="--d:.3s"><h3>Instagram</h3><a href="https://www.instagram.com/le_chardonbleu/" target="_blank" rel="noopener">@le_chardonbleu</a></div>
 <div class="ic rv" style="--d:.4s"><h3>Horaires</h3><span data-f="hor"></span></div>
 <div class="ic rv" style="--d:.5s"><h3>Itinéraire</h3><a data-f="adr" class="btn" id="it">Ouvrir dans Plans</a></div>
-</div></div></section>
+</div><div class="mp rv" id="mp"><div><p style="margin:0 0 1rem">Voir l’emplacement du restaurant sur la carte</p><button class="btn" id="mpb" type="button">Afficher la carte</button></div></div></div></section>
 
-<section id="reservation" class="cr"><div class="w"><h2 class="mk"><span>On vous garde une table au chaud</span></h2>
-<p class="rv">Dites-nous quand vous arrivez, on s’occupe du reste.</p><p class="demo">Démonstration : aucune demande n’est envoyée pour le moment.</p>
+<section id="reservation" class="cr"><div class="w"><span class="eb rv">Réservation</span><h2 class="mk"><span>On vous garde une table au chaud</span></h2>
+<p class="rv">Dites-nous quand vous arrivez : votre demande est transmise au restaurant, qui vous confirme ensuite la table.</p>
 <form id="rf" class="rv">
 <div><label for="n">Nom</label><input id="n" name="n" required></div>
 <div><label for="t">Téléphone</label><input id="t" name="t" type="tel" required></div>
@@ -341,19 +400,29 @@ footer .lg{rotate:calc(var(--p,.5)*300deg)}
 <div><label for="k">Nombre de personnes</label><select id="k" name="k"></select></div>
 <div><label for="m">E-mail</label><input id="m" name="m" type="email"></div>
 <div class="f"><label for="x">Message</label><textarea id="x" name="x" rows="3"></textarea></div>
-<div class="f"><button class="btn" type="submit">Simuler la demande</button></div></form>
+<div class="f"><button class="btn" type="submit">Envoyer la demande</button></div></form>
 <div id="rs" role="status"></div></div></section>
 
 <footer><div class="fg"><img class="lg" src="logo.png" alt="Le Chardon Bleu">
 <div><h3>Le Chardon Bleu</h3><a data-f="adr" style="pointer-events:none"></a><a data-f="tel"></a><a data-f="mail"></a><a href="https://www.instagram.com/le_chardonbleu/" target="_blank" rel="noopener">Instagram</a></div>
-<div><h3>Navigation</h3><a href="#carte">La carte</a><a href="#galerie">Galerie</a><a href="#reservation">Réserver</a><a href="#admin" id="oa">Espace admin (démo)</a>
+<div><h3>Navigation</h3><a href="#carte">La carte</a><a href="#galerie">Galerie</a><a href="#reservation">Réserver</a><a href="#admin" id="oa">Espace administrateur</a>
 <details><summary>Mentions légales</summary>À compléter : éditeur, hébergeur, données personnelles.</details></div></div>
-<small>© Le Chardon Bleu by La Marmotte Affamée — site en phase de validation frontend</small></footer>
+<small>© Le Chardon Bleu by La Marmotte Affamée</small></footer>
 
+<div id="bar"><a class="btn g" id="bcall" href="tel:">Appeler</a><a class="btn" href="#reservation">Réserver</a></div>
 <div id="lb"><div id="lbi"><span id="lbc"></span></div></div>
 <div id="ts"></div>
 <div id="adm"><div id="an"></div><div id="ac"></div></div>
 
+<script id="i18n">
+var LG='fr';try{const q=new URLSearchParams(location.search).get('lang'),v=localStorage.getItem('lang');LG=q=='en'||q=='fr'?q:v=='en'||v=='fr'?v:/^en/i.test(navigator.language||'')?'en':'fr'}catch(_){}
+const M={al:['Allergènes :','Allergens:'],none:['Aucun plat dans cette catégorie.','No dishes in this category.'],dir:['Ouvrir l’itinéraire','Get directions'],hor:['Horaires à confirmer par le restaurant','Opening hours to be confirmed by the restaurant'],
+pers:['pers.',n=>n==1?'guest':'guests'],send:['Envoyer la demande','Send request'],wait:['Envoi en cours…','Sending…'],
+nosvc:['Le service de demande en ligne n’est pas encore activé. Merci d’appeler le ','The online request service is not active yet. Please call '],
+fail:['Votre demande n’a pas pu être transmise. Vérifiez le téléphone et la date, ou appelez le ','Your request could not be sent. Please check your phone number and date, or call '],
+ok:['Merci ! Votre demande a bien été transmise au restaurant. Elle reste en attente de confirmation : ce n’est pas encore une réservation confirmée. Le restaurant vous répondra par téléphone ou e-mail.','Thank you! Your request has been sent to the restaurant. It is still awaiting confirmation: this is not a confirmed booking yet. The restaurant will reply by phone or e-mail.']};
+function T(k,n){const v=M[k][LG=='en'?1:0];return typeof v=='function'?v(n):v}
+</script>
 <script>
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const e=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -373,16 +442,15 @@ g1:'photos/galerie-1.jpg',g2:'photos/galerie-2.jpg',g3:'photos/galerie-3.jpg',g4
 const INFO={adr:'65 chemin de Pré Aynard, Front de neige, Valmeinier 1800, 73450 Valmeinier',tel:'04 79 59 20 89',mail:'restaurant.lechardonbleu@orange.fr',hor:'Horaires à confirmer par le restaurant'};
 let CATS=['Spécialités savoyardes','Fondues','Raclettes','Plats traditionnels','Crêpes','Desserts','Boissons'],DISH=[],cur=0;
 CATS.forEach((c,i)=>['A','B'].forEach(x=>DISH.push({id:i+x,c,n:c+' — exemple '+x,d:'Description à renseigner par le restaurateur.',p:'00,00 €',al:'à renseigner'})));
-let REQ=[{n:'Exemple (démo)',t:'06 00 00 00 00',d:'2026-12-20',h:'19:30',k:4}];
 function toast(t){const s=$('#ts');s.textContent=t;s.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>s.classList.remove('on'),1800)}
 function img(){$$('.ph[data-k]').forEach(p=>{const u=IMG[p.dataset.k],i=$('i',p);if(u){i.style.backgroundImage='url("'+u+'")';p.classList.add('has')}else{i.style.backgroundImage='';p.classList.remove('has')}})}
-function info(){$$('[data-f]').forEach(a=>{const k=a.dataset.f;a.textContent=INFO[k];if(k=='tel')a.href='tel:+33'+INFO.tel.replace(/\s/g,'').slice(1);if(k=='mail')a.href='mailto:'+INFO.mail;if(k=='adr'&&a.tagName=='A')a.href='https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(INFO.adr);if(a.id=='it')a.textContent='Ouvrir l’itinéraire'})}
+function info(){$$('[data-f]').forEach(a=>{const k=a.dataset.f;a.textContent=INFO[k];if(k=='tel')a.href='tel:+33'+INFO.tel.replace(/\s/g,'').slice(1);if(k=='mail')a.href='mailto:'+INFO.mail;if(k=='adr'&&a.tagName=='A')a.href='https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(INFO.adr);if(a.id=='it')a.textContent=T('dir')})}
 function tabs(){$('#tabs').innerHTML=CATS.map((c,i)=>'<button class="'+(i==cur?'on':'')+'" data-i="'+i+'">'+e(c)+'</button>').join('');list()}
-function list(){const L=$('#dishes');L.classList.remove('in');L.innerHTML=DISH.filter(d=>d.c==CATS[cur]).map((d,i)=>'<div class="di" style="--d:'+i*.08+'s"><div><h3>'+e(d.n)+'</h3><span>'+e(d.p)+'</span></div><p>'+e(d.d)+'</p><small>Allergènes : '+e(d.al)+'</small></div>').join('')||'<p>Aucun plat dans cette catégorie.</p>';void L.offsetWidth;L.classList.add('in')}
+function list(){const L=$('#dishes');L.classList.remove('in');L.innerHTML=DISH.filter(d=>d.c==CATS[cur]).map((d,i)=>'<div class="di" style="--d:'+i*.08+'s"><div><h3>'+e(d.n)+'</h3><span>'+e(d.p)+'</span></div><p>'+e(d.d)+'</p><small>'+T('al')+' '+e(d.al)+'</small></div>').join('')||'<p>'+T('none')+'</p>';void L.offsetWidth;L.classList.add('in')}
 $('#tabs').onclick=ev=>{const b=ev.target.closest('button');if(b){cur=+b.dataset.i;tabs()}};
 /* marquee, neige, couverts */
 $('#mq').innerHTML='<div>'+'Venez hiberner avec nous ✦ Spécialités savoyardes ✦ Crêpes ✦ Valmeinier 1800 ✦ Front de neige ✦ '.repeat(12)+'</div>';
-$('#k').innerHTML=Array.from({length:12},(_,i)=>'<option>'+(i+1)+' pers.</option>').join('');$('#d').min=new Date().toISOString().slice(0,10);
+$('#k').innerHTML=Array.from({length:12},(_,i)=>'<option>'+(i+1)+' '+T('pers',i+1)+'</option>').join('');$('#d').min=new Date().toISOString().slice(0,10);
 /* reveal + parallaxe + header */
 const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.15,rootMargin:"0px 0px -8% 0px"});
 $$('.rv,.mk').forEach(x=>io.observe(x));
@@ -393,34 +461,7 @@ $('.bg').onclick=()=>$('header').classList.toggle('open');$$('nav a').forEach(a=
 /* galerie */
 $$('.gi').forEach(g=>g.onclick=()=>{const u=IMG[g.dataset.k];$('#lbi').style.backgroundImage=u?'url("'+u+'")':'';$('#lbc').textContent=u?'':g.dataset.l;$('#lb').className='on'});
 $('#lb').onclick=()=>$('#lb').className='';
-addEventListener('keydown',ev=>{if(ev.key=='Escape'){$('#lb').className='';$('#adm').classList.remove('on')}});
-/* réservation simulée */
-$('#rf').onsubmit=ev=>{ev.preventDefault();const f=new FormData(ev.target);REQ.unshift({n:f.get('n'),t:f.get('t'),d:f.get('d'),h:f.get('h'),k:f.get('k')});const r=$('#rs');r.textContent='Simulation : votre demande n’a pas été envoyée au restaurant. Pour réserver, appelez le '+INFO.tel+'.';r.className='on';ev.target.reset()};
-/* admin de démonstration */
-const TB=['Tableau de bord','Plats','Catégories','Photos','Horaires et infos','Réservations'];let AT=TB[0];
-function adm(){$('#an').innerHTML='<button class="x" id="cl">✕ Fermer</button>'+TB.map(t=>'<button class="'+(t==AT?'on':'')+'">'+t+'</button>').join('');
-let h='<h2>'+AT+'</h2><p style="opacity:.7;margin:.4rem 0 1.2rem">Démonstration : données simulées, sans authentification ni sauvegarde.</p>';
-if(AT==TB[0])h+='<div class="kp"><div><b>'+DISH.length+'</b>plats</div><div><b>'+CATS.length+'</b>catégories</div><div><b>'+REQ.length+'</b>demandes</div></div>';
-if(AT=='Plats')h+=DISH.map(d=>'<div class="ar" data-id="'+d.id+'"><input data-a="n" value="'+e(d.n)+'"><input data-a="p" value="'+e(d.p)+'"><select data-a="c">'+CATS.map(c=>'<option '+(c==d.c?'selected':'')+'>'+e(c)+'</option>').join('')+'</select><input data-a="d" value="'+e(d.d)+'"><input data-a="al" value="'+e(d.al)+'"><button class="x" data-x="'+d.id+'" aria-label="Supprimer">✕</button></div>').join('')+'<button class="btn" id="ad">Ajouter un plat</button>';
-if(AT=='Catégories')h+=CATS.map((c,i)=>'<div class="ar"><input data-ci="'+i+'" value="'+e(c)+'"><button class="x" data-cx="'+i+'" aria-label="Supprimer">✕</button></div>').join('')+'<button class="btn" id="ak">Ajouter une catégorie</button>';
-if(AT=='Photos')h+='<p style="margin-bottom:1rem">Collez le chemin d’une photo placée dans le dossier du site (ex. photos/hero.jpg) : elle remplace le cadre provisoire.</p>'+[...new Set($$('.ph[data-k]').map(p=>p.dataset.k))].map(k=>'<div class="ar"><label style="flex:0 0 90px">'+k+'</label><input data-im="'+k+'" value="'+e(IMG[k]||'')+'" placeholder="photos/'+k+'.jpg"></div>').join('');
-if(AT==TB[4])h+=[['adr','Adresse'],['tel','Téléphone'],['mail','E-mail'],['hor','Horaires']].map(([k,l])=>'<div style="margin-bottom:1rem"><label>'+l+'</label><input data-ik="'+k+'" value="'+e(INFO[k])+'"></div>').join('');
-if(AT=='Réservations')h+=REQ.map(r=>'<div class="kp"><div>'+e(r.n)+' — '+e(r.t)+'<br>'+e(r.d)+' à '+e(r.h)+', '+e(r.k)+'</div></div>').join('');
-$('#ac').innerHTML=h}
-$('#oa').onclick=()=>{$('#adm').classList.add('on');adm()};if(location.hash=='#admin')$('#oa').click();
-$('#an').onclick=ev=>{const b=ev.target.closest('button');if(!b)return;if(b.id=='cl')$('#adm').classList.remove('on');else{AT=b.textContent;adm()}};
-$('#ac').onchange=ev=>{const t=ev.target,r=t.closest('[data-id]');
-if(r){const d=DISH.find(x=>x.id==r.dataset.id);d[t.dataset.a]=t.value;tabs()}
-else if(t.dataset.ci!=null){const o=CATS[t.dataset.ci];CATS[t.dataset.ci]=t.value;DISH.forEach(d=>{if(d.c==o)d.c=t.value});tabs()}
-else if(t.dataset.ik){INFO[t.dataset.ik]=t.value;info()}
-else if(t.dataset.im){IMG[t.dataset.im]=t.value.trim();img()}
-toast('Modifié (simulation)')};
-$('#ac').onclick=ev=>{const b=ev.target.closest('button');if(!b)return;
-if(b.dataset.x){DISH=DISH.filter(d=>d.id!=b.dataset.x)}
-else if(b.id=='ad'){DISH.push({id:'n'+Date.now(),c:CATS[cur],n:'Nouveau plat',d:'Description à renseigner.',p:'00,00 €',al:'à renseigner'})}
-else if(b.dataset.cx){const c=CATS.splice(b.dataset.cx,1)[0];DISH=DISH.filter(d=>d.c!=c);cur=0}
-else if(b.id=='ak'){CATS.push('Nouvelle catégorie')}
-else return;tabs();adm();toast('Modifié (simulation)')};
+addEventListener('keydown',ev=>{if(ev.key=='Escape'){$('#lb').className=''}});
 tabs();info();img();sc();
 </script>
 <script id="m2js">
@@ -446,7 +487,7 @@ function count(el){const t=el.textContent,m=t.match(/(\d+)([,.](\d+))?/);if(!m||
 function mv(){const B=$$('#tabs button'),b=B[cur],p=$('#tp');B.forEach((x,i)=>x.classList.toggle('on',i==cur));if(b&&p)p.style.cssText='width:'+b.offsetWidth+'px;height:'+b.offsetHeight+'px;transform:translate('+b.offsetLeft+'px,'+b.offsetTop+'px)'}
 function tabs(){$('#tabs').innerHTML='<i id="tp"></i>'+CATS.map((c,i)=>'<button data-i="'+i+'">'+e(c)+'</button>').join('');mv();list()}
 function list(){const L=$('#dishes'),old=$$('.di',L);clearTimeout(list.t);
-const go=()=>{L.classList.remove('in');L.innerHTML=DISH.filter(d=>d.c==CATS[cur]).map((d,i)=>'<div class="di" style="--d:'+i*.08+'s"><div><h3>'+e(d.n)+'</h3><span class="pr">'+e(d.p)+'</span></div><p>'+e(d.d)+'</p><small>Allergènes : '+e(d.al)+'</small></div>').join('')||'<p>Aucun plat dans cette catégorie.</p>';void L.offsetWidth;L.classList.add('in');$$('.pr',L).forEach(count)};
+const go=()=>{L.classList.remove('in');L.innerHTML=DISH.filter(d=>d.c==CATS[cur]).map((d,i)=>'<div class="di" style="--d:'+i*.08+'s">'+(d.ph?'<img class="dp" src="'+e(d.ph)+'" alt="'+e(d.n)+'" loading="lazy">':'')+'<div><h3>'+e(d.n)+'</h3><span class="pr">'+e(d.p)+'</span></div><p>'+e(d.d)+'</p><small>'+T('al')+' '+e(d.al)+'</small></div>').join('')||'<p>'+T('none')+'</p>';void L.offsetWidth;L.classList.add('in');$$('.pr',L).forEach(count)};
 if(old.length&&!RM){old.forEach((d,i)=>{d.style.transitionDelay=i*.03+'s';d.classList.add('out')});list.t=setTimeout(go,360)}else go()}
 $('#tabs').onclick=ev=>{const b=ev.target.closest('button');if(b){cur=+b.dataset.i;mv();list()}};
 $('#dishes').addEventListener('pointermove',ev=>{const d=ev.target.closest('.di');if(d){const r=d.getBoundingClientRect();d.style.setProperty('--mx',ev.clientX-r.left+'px');d.style.setProperty('--my',ev.clientY-r.top+'px')}});
@@ -465,9 +506,6 @@ GI.forEach((g,i)=>g.onclick=()=>{const r=g.getBoundingClientRect();LB.style.setP
 LB.onclick=ev=>{const n=ev.target.closest('.ln');if(n)lbShow(gi+ +n.dataset.d,+n.dataset.d);else if(ev.target==LB||ev.target.closest('.lc'))LB.className=''};
 addEventListener('keydown',ev=>{if(LB.classList.contains('on')){if(ev.key=='ArrowRight')lbShow(gi+1,1);if(ev.key=='ArrowLeft')lbShow(gi-1,-1)}});
 LB.addEventListener('touchstart',ev=>tx=ev.touches[0].clientX,{passive:true});LB.addEventListener('touchend',ev=>{const d=ev.changedTouches[0].clientX-tx;if(Math.abs(d)>50)lbShow(gi-Math.sign(d),-Math.sign(d))});
-/* réservation simulée : état d'attente puis confirmation animée */
-$('#rf').onsubmit=ev=>{ev.preventDefault();const f=new FormData(ev.target),b=$('button[type=submit]',ev.target);b.classList.add('wt');b.textContent='Simulation en cours…';
-setTimeout(()=>{REQ.unshift({n:f.get('n'),t:f.get('t'),d:f.get('d'),h:f.get('h'),k:f.get('k')});const r=$('#rs');r.className='';void r.offsetWidth;r.textContent='✓ Simulation : votre demande n’a pas été envoyée au restaurant. Pour réserver, appelez le '+INFO.tel+'.';r.className='on';b.classList.remove('wt');b.textContent='Simuler la demande';ev.target.reset()},800)};
 /* photos : un cadre ne passe en « chargé » que si le fichier existe */
 function img(){$$('.ph[data-k]').forEach(p=>{const k=p.dataset.k,u=IMG[k],i=$('i',p);p.dataset.d=p.dataset.d||p.dataset.l.replace(/^Photo provisoire( \d+)? ?: ?/i,'').replace(/, à remplacer$/,'');p.classList.remove('has');i.style.backgroundImage='';p.dataset.l='Photo à ajouter : '+(u||'photos/'+k+'.jpg')+' ('+p.dataset.d+')';if(!u)return;const t=new Image();t.onload=()=>{if(IMG[k]!=u)return;i.style.backgroundImage='url("'+u+'")';p.classList.add('has');if(p.classList.contains('bks'))bk(bk.k||0)};t.src=u})}
 const HS=$$('.hs');setInterval(()=>{const L=HS.filter(x=>x.classList.contains('has'));if(L.length<2||document.hidden||RM)return;const c=L.findIndex(x=>x.classList.contains('on'));HS.forEach(x=>x.classList.remove('on'));L[(c+1)%L.length].classList.add('on')},6500);
@@ -482,5 +520,235 @@ const rl=$$('#rail a'),ro=new IntersectionObserver(es=>es.forEach(x=>{if(x.isInt
 $$('#rf>div').forEach((d,i)=>d.style.setProperty('--i',i));
 img();tabs();sc();
 </script>
-</body></html>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script id="sbjs">
+/* ===== SUPABASE : données publiques, réservations, espace administrateur ===== */
+(()=>{
+/* >>> À RENSEIGNER : URL du projet + clé PUBLIQUE (anon / publishable). JAMAIS la clé service_role. */
+const SB_URL='https://VOTRE-PROJET.supabase.co',SB_KEY='VOTRE_CLE_ANON_OU_PUBLISHABLE';
+const sb=window.supabase&&!/VOTRE/.test(SB_URL+SB_KEY)?supabase.createClient(SB_URL,SB_KEY):null;
+const DEF={...IMG},ST=['nouvelle','confirmée','refusée','annulée'];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const okUrl=u=>/^https:\/\/[^\s"'()<>]+$/.test(u||'')?u:'';
+const fd=t=>new Date(t).toLocaleString('fr-FR',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}),dfr=d=>d.split('-').reverse().join('/');
 
+/* ---------- site public : carte, photos, infos ---------- */
+async function loadPublic(){
+ if(!sb)return;
+ try{
+  const [c,d,i,s]=await Promise.all([
+   sb.from('categories').select('id,name').order('sort_order').order('name'),
+   sb.from('dishes').select('id,category_id,name,description,price,allergens,photo_url,is_demo').eq('is_available',true).order('sort_order').order('created_at'),
+   sb.from('site_images').select('key,url'),sb.from('site_settings').select('key,value')]);
+  if(c.error||d.error)throw c.error||d.error;
+  const nm={};CATS=c.data.map(x=>(nm[x.id]=x.name));
+  DISH=d.data.filter(x=>nm[x.category_id]).map(x=>({id:x.id,c:nm[x.category_id],n:x.name,d:x.description,p:x.price,al:x.allergens||'—',ph:okUrl(x.photo_url),demo:x.is_demo}));
+  cur=Math.min(cur,Math.max(0,CATS.length-1));
+  Object.assign(IMG,DEF);if(!i.error)i.data.forEach(r=>{const u=okUrl(r.url);if(u)IMG[r.key]=u});
+  if(!s.error){s.data.forEach(r=>{if(r.key in INFO&&r.value)INFO[r.key]=r.value});extras(Object.fromEntries(s.data.map(r=>[r.key,r.value])))}
+  const dm=$('#carte .demo');if(dm)dm.hidden=!DISH.some(x=>x.demo);
+  tabs();info();img();tl();fx();
+ }catch(x){console.warn('Supabase indisponible : données par défaut conservées',x)}
+}
+
+/* ---------- réservation réelle (statut initial « nouvelle », jamais confirmée automatiquement) ---------- */
+[['n',120],['t',30],['m',200],['x',1000]].forEach(([i,m])=>$('#'+i).maxLength=m);
+$('#rf').onsubmit=async ev=>{ev.preventDefault();
+ const f=new FormData(ev.target),b=$('button[type=submit]',ev.target),r=$('#rs');
+ const show=(t,bad)=>{r.className='';void r.offsetWidth;r.textContent=t;r.style.borderLeftColor=bad?'#b33':'';r.className='on'};
+ if(!sb)return show(T('nosvc')+INFO.tel+'.',1);
+ b.disabled=true;b.classList.add('wt');b.textContent=T('wait');
+ const {error}=await sb.from('reservations').insert({name:f.get('n').trim(),phone:f.get('t').trim(),email:(f.get('m')||'').trim()||null,booking_date:f.get('d'),booking_time:f.get('h'),guests:parseInt(f.get('k'),10),message:(f.get('x')||'').trim()||null,status:'nouvelle'});
+ b.disabled=false;b.classList.remove('wt');b.textContent=T('send');
+ if(error)return show(T('fail')+INFO.tel+'.',1);
+ show(T('ok'));ev.target.reset()};
+
+/* ---------- espace administrateur ---------- */
+const adm=$('#adm'),an=$('#an'),ac=$('#ac'),S={u:null,fc:'',rf:{s:'',d:'',q:''}};
+const IC={dash:'<path d="M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z"/>',dish:'<path d="M4 3v8a3 3 0 0 0 3 3v7M7 3v6M10 3v8a3 3 0 0 1-3 3M17 21V3c-2 1-3 4-3 8h3"/>',cat:'<path d="M4 6h16M4 12h16M4 18h10"/>',img:'<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-8 9"/>',set:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/>',res:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/>',out:'<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>',ok:'<path d="m5 12 5 5 9-10"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',eye:'<path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>'};
+const svg=n=>`<svg viewBox="0 0 24 24" aria-hidden="true">${IC[n]}</svg>`;
+const NAV=[['dash','Tableau de bord'],['dish','Plats'],['cat','Catégories'],['img','Photos'],['set','Infos du restaurant'],['res','Réservations']];
+const KEYS={hero:'Accueil 1',hero2:'Accueil 2',hero3:'Accueil 3',resto:'Restaurant (portrait)',resto2:'Restaurant (détail)',band1:'Bandeau 1',band2:'Bandeau 2',bk1:'Fond fixe 1',bk2:'Fond fixe 2',bk3:'Fond fixe 3',bk4:'Fond fixe 4',s1:'Spécialité 1',s2:'Spécialité 2',s3:'Spécialité 3',terrasse:'Terrasse (fond)',terrasse2:'Terrasse (cadre)',g1:'Galerie 1',g2:'Galerie 2',g3:'Galerie 3',g4:'Galerie 4',g5:'Galerie 5',g6:'Galerie 6',histoire:'Notre histoire (photo)'};
+const MIME={'image/jpeg':'jpg','image/png':'png','image/webp':'webp','image/avif':'avif'};
+const hd=(t,x='')=>`<div class="hd"><h2>${t}</h2>${x}</div>`;
+function note(t,bad){const s=$('#ts');s.textContent=t;s.style.background=bad?'#b33':'';s.style.color=bad?'#fff':'';s.classList.add('on');clearTimeout(note.t);note.t=setTimeout(()=>s.classList.remove('on'),bad?4500:2200)}
+/* toute écriture vérifie la session ; la vraie protection reste la RLS côté Supabase */
+async function run(fn,msg){const {data:{session}}=await sb.auth.getSession();if(!session){loginView('Session expirée : reconnectez-vous.');throw new Error('Session expirée')}
+ const r=await fn();if(r&&r.error)throw new Error(r.error.message);if(msg)note(msg);return r}
+async function up(file,dir){if(!MIME[file.type])throw new Error('Format non pris en charge (JPG, PNG, WebP ou AVIF).');if(file.size>15*1048576)throw new Error('Photo trop lourde (15 Mo maximum).');
+ const p=`${dir}/${Date.now()}-${Math.random().toString(36).slice(2,8)}.${MIME[file.type]}`;
+ const {error}=await sb.storage.from('photos').upload(p,file,{contentType:file.type,cacheControl:'31536000'});if(error)throw new Error(error.message);
+ return sb.storage.from('photos').getPublicUrl(p).data.publicUrl}
+async function rm(u){const m=/\/object\/public\/photos\/(.+)$/.exec(u||'');if(m)await sb.storage.from('photos').remove([decodeURIComponent(m[1])])}
+function modal({title,body,ok='Valider',danger,onOk}){return new Promise(res=>{
+ const m=document.createElement('div');m.className='mdl';
+ m.innerHTML=`<form class="mb" role="dialog" aria-modal="true" aria-label="${esc(title)}"><h3>${esc(title)}</h3>${body}<p class="me" role="alert"></p><div class="ma"><button type="button" class="btn g" data-x>Annuler</button><button class="btn"${danger?' style="background:#a33;border-color:#a33;color:#fff"':''}>${esc(ok)}</button></div></form>`;
+ const f=m.firstChild,close=v=>{m.remove();document.removeEventListener('keydown',kd);res(v)},kd=ev=>{if(ev.key=='Escape'){ev.stopPropagation();close(false)}};
+ document.addEventListener('keydown',kd);
+ m.onclick=ev=>{if(ev.target==m||ev.target.closest('[data-x]'))close(false)};
+ f.onsubmit=async ev=>{ev.preventDefault();const b=$('.btn:not(.g)',f);b.disabled=true;$('.me',f).textContent='';
+  try{await onOk(f);close(true)}catch(x){b.disabled=false;$('.me',f).textContent=x.message||'Erreur'}};
+ adm.appendChild(m);const p=$('input:not([type=file]),select,textarea',f);(p||$('.btn:not(.g)',f)).focus()})}
+const ask=(title,msg,ok)=>modal({title,body:`<p>${msg}</p>`,ok,danger:1,onOk:async()=>{}});
+
+/* connexion / garde */
+function loginView(msg){S.u=null;adm.classList.add('on');an.innerHTML='';ac.className='ctr';
+ ac.innerHTML=`<form class="lgb" id="lg"><img src="logo.png" alt=""><h2>Espace administrateur</h2><p class="lm" role="alert"></p><label>E-mail<input type="email" name="em" autocomplete="username" required></label><label>Mot de passe<span class="pw2"><input type="password" name="pw" autocomplete="current-password" required><button type="button" aria-label="Afficher le mot de passe" aria-pressed="false">${svg('eye')}</button></span></label><button class="btn">Se connecter</button><button type="button" class="btn g" data-act="close">Retour au site</button></form>`;
+ const f=$('#lg'),pw=f.elements.pw,eye=$('.pw2 button',f),lm=$('.lm',f);lm.textContent=msg||'';
+ eye.onclick=()=>{const s=pw.type=='password';pw.type=s?'text':'password';eye.setAttribute('aria-pressed',s);eye.setAttribute('aria-label',s?'Masquer le mot de passe':'Afficher le mot de passe')};
+ f.onsubmit=async ev=>{ev.preventDefault();if(!sb)return lm.textContent='Supabase n’est pas configuré (SB_URL et SB_KEY dans index.html).';
+  const b=$('.btn',f);b.disabled=true;lm.textContent='';
+  const {error}=await sb.auth.signInWithPassword({email:f.elements.em.value.trim(),password:pw.value});b.disabled=false;
+  if(error)return lm.textContent=/invalid|credentials/i.test(error.message)?'E-mail ou mot de passe incorrect.':'Connexion impossible : '+error.message;
+  gate()}}
+async function gate(){adm.classList.add('on');
+ if(!sb)return loginView('Supabase n’est pas configuré (SB_URL et SB_KEY dans index.html).');
+ const {data:{session}}=await sb.auth.getSession();if(!session)return loginView();
+ const {data:ok,error}=await sb.rpc('is_admin');   /* vérifie la présence dans la table admins */
+ if(error||ok!==true){await sb.auth.signOut();return loginView('Ce compte n’a pas les droits administrateur.')}
+ S.u=session.user.email;go('dash')}
+sb&&sb.auth.onAuthStateChange(ev=>{if(ev=='SIGNED_OUT'&&S.u)loginView('Session expirée. Veuillez vous reconnecter.')});
+
+const VIEW={dash:vDash,dish:vDish,cat:vCat,img:vImg,set:vSet,res:vRes};
+async function go(v){
+ an.innerHTML=`<div class="br">Le Chardon Bleu</div>${NAV.map(([k,t])=>`<button data-act="nav" data-v="${k}" class="${k==v?'on':''}">${svg(k)}<span>${t}</span></button>`).join('')}<div class="us">${esc(S.u)}</div><button data-act="out">${svg('out')}<span>Déconnexion</span></button><button data-act="close">${svg('eye')}<span>Voir le site</span></button>`;
+ ac.className='';ac.innerHTML='<div class="ld">Chargement…</div>';
+ try{await VIEW[v]()}catch(x){ac.innerHTML=`<div class="pn"><h3>Une erreur est survenue</h3><p>${esc(x.message||x)}</p><p style="margin-top:.8rem"><button class="ab" data-act="nav" data-v="${v}">Réessayer</button></p></div>`}}
+
+async function vDash(){
+ const n=(t,f)=>{const r=sb.from(t).select('id',{count:'exact',head:true});return f?f(r):r};
+ const R=await Promise.all([n('dishes'),n('categories'),n('dishes',r=>r.eq('is_available',true)),n('reservations',r=>r.eq('status','nouvelle')),n('reservations',r=>r.eq('status','confirmée')),
+  sb.from('reservations').select('*').order('created_at',{ascending:false}).limit(5),sb.from('dishes').select('name,created_at').order('created_at',{ascending:false}).limit(5)]);
+ const bad=R.find(x=>x.error);if(bad)throw new Error(bad.error.message);
+ const [d,c,da,rn,rc,rl,dl]=R,card=(i,l,x)=>`<div>${svg(i)}<b>${x.count??0}</b>${l}</div>`;
+ const act=[...rl.data.map(r=>({t:r.created_at,s:`Demande de ${esc(r.name)} · ${r.guests} pers. le ${dfr(r.booking_date)}`})),...dl.data.map(x=>({t:x.created_at,s:`Plat ajouté : ${esc(x.name)}`}))].sort((a,b)=>b.t<a.t?-1:1).slice(0,6);
+ ac.innerHTML=hd('Tableau de bord')+`<div class="st">${card('dish','plats',d)}${card('cat','catégories',c)}${card('ok','plats disponibles',da)}${card('clock','demandes en attente',rn)}${card('res','réservations confirmées',rc)}</div>`+
+ `<div class="pn"><h3>Dernières demandes de réservation</h3>${rl.data.length?rl.data.map(r=>`<p class="li"><span>${esc(r.name)} — ${dfr(r.booking_date)} ${esc(r.booking_time||'')} · ${r.guests} pers.</span><span class="tag ${r.status}">${r.status}</span></p>`).join(''):'<div class="em">Aucune demande pour le moment.</div>'}</div>`+
+ `<div class="pn"><h3>Activité récente</h3>${act.length?act.map(a=>`<p class="li"><span>${a.s}</span><small>${fd(a.t)}</small></p>`).join(''):'<div class="em">Aucune activité pour le moment.</div>'}</div>`}
+
+async function vDish(){
+ const [c,d]=await Promise.all([sb.from('categories').select('*').order('sort_order'),sb.from('dishes').select('*').order('sort_order').order('created_at')]);
+ if(c.error||d.error)throw new Error((c.error||d.error).message);S.c=c.data;S.d=d.data;
+ const cn=Object.fromEntries(S.c.map(x=>[x.id,x.name])),L=S.d.filter(x=>!S.fc||x.category_id==S.fc);
+ ac.innerHTML=hd('Plats','<button class="btn" data-act="dn">Ajouter un plat</button>')+
+ `<div class="fl2"><select id="fcat" aria-label="Filtrer par catégorie"><option value="">Toutes les catégories</option>${S.c.map(x=>`<option value="${x.id}"${x.id==S.fc?' selected':''}>${esc(x.name)}</option>`).join('')}</select></div>`+
+ (L.length?`<div class="tw"><table><thead><tr><th>Plat</th><th>Catégorie</th><th>Ordre</th><th>Dispo</th><th></th></tr></thead><tbody>${L.map(x=>`<tr><td><b>${esc(x.name)}</b>${x.is_demo?' <span class="tag demo">Démo</span>':''}<br><small>${esc(x.price)}</small></td><td>${esc(cn[x.category_id]||'—')}</td><td>${x.sort_order}</td><td><input type="checkbox" class="sw2" data-tog="${x.id}"${x.is_available?' checked':''} aria-label="Disponible"></td><td class="ta"><button class="ab" data-act="ed" data-id="${x.id}">Modifier</button> <button class="ab d" data-act="dd" data-id="${x.id}">Supprimer</button></td></tr>`).join('')}</tbody></table></div>`:'<div class="em">Aucun plat ici pour le moment.</div>');
+ $('#fcat').onchange=ev=>{S.fc=ev.target.value;vDish()}}
+function dishForm(id){
+ if(!S.c.length)return note('Créez d’abord une catégorie.',1);
+ const d=S.d.find(x=>x.id==id)||{is_available:true,sort_order:S.d.reduce((m,x)=>Math.max(m,x.sort_order),0)+10},pu=okUrl(d.photo_url);
+ return modal({title:id?'Modifier le plat':'Nouveau plat',ok:'Enregistrer',body:
+ `<label>Nom<input name="nm" required maxlength="120" value="${esc(d.name)}"></label><label>Catégorie<select name="cid" required>${S.c.map(c=>`<option value="${c.id}"${c.id==(d.category_id||S.fc||S.c[0].id)?' selected':''}>${esc(c.name)}</option>`).join('')}</select></label>`+
+ `<label>Description<textarea name="ds" rows="3">${esc(d.description)}</textarea></label><label>Prix (texte libre, ex. 12,50 €)<input name="pr" maxlength="40" value="${esc(d.price)}"></label><label>Allergènes<input name="al" value="${esc(d.allergens)}"></label><label>Ordre d’affichage<input name="so" type="number" value="${d.sort_order}"></label>`+
+ `<label class="ck"><input type="checkbox" name="av"${d.is_available?' checked':''}> Disponible (visible sur le site)</label><label class="ck"><input type="checkbox" name="dm"${d.is_demo?' checked':''}> Plat de démonstration</label>`+
+ `<label>Photo (facultative)<input type="file" name="file" accept="image/jpeg,image/png,image/webp,image/avif"></label><img class="pv" alt="Aperçu"${pu?` src="${esc(pu)}"`:' hidden'}>${pu?'<label class="ck"><input type="checkbox" name="rmph"> Retirer la photo actuelle</label>':''}`,
+ onOk:async f=>{const E=f.elements,file=E.file.files[0];let url=d.photo_url||null;
+  const row={name:E.nm.value.trim(),category_id:E.cid.value,description:E.ds.value.trim(),price:E.pr.value.trim(),allergens:E.al.value.trim(),sort_order:parseInt(E.so.value,10)||0,is_available:E.av.checked,is_demo:E.dm.checked};
+  if(file)url=await up(file,'dishes');else if(E.rmph&&E.rmph.checked)url=null;row.photo_url=url;
+  try{await run(()=>id?sb.from('dishes').update(row).eq('id',id):sb.from('dishes').insert(row))}catch(x){if(file)await rm(url);throw x}
+  if(d.photo_url&&url!=d.photo_url)await rm(d.photo_url)}}).then(ok=>{if(ok){note('Plat enregistré');loadPublic();go('dish')}})}
+
+async function vCat(){
+ const [c,d]=await Promise.all([sb.from('categories').select('*').order('sort_order'),sb.from('dishes').select('id,category_id')]);
+ if(c.error||d.error)throw new Error((c.error||d.error).message);S.c=c.data;S.d=d.data;
+ const n=id=>d.data.filter(x=>x.category_id==id).length;
+ ac.innerHTML=hd('Catégories','<button class="btn" data-act="cn">Ajouter une catégorie</button>')+(c.data.length?`<div class="tw"><table><thead><tr><th>Nom</th><th>Plats</th><th>Ordre</th><th></th></tr></thead><tbody>${c.data.map(x=>`<tr><td><b>${esc(x.name)}</b></td><td>${n(x.id)}</td><td>${x.sort_order}</td><td class="ta"><button class="ab" data-act="cv" data-id="${x.id}">Voir les plats</button> <button class="ab" data-act="ce" data-id="${x.id}">Modifier</button> <button class="ab d" data-act="cd" data-id="${x.id}">Supprimer</button></td></tr>`).join('')}</tbody></table></div>`:'<div class="em">Aucune catégorie : ajoutez-en une pour structurer la carte.</div>')}
+function catForm(id){const c=S.c.find(x=>x.id==id)||{sort_order:S.c.reduce((m,x)=>Math.max(m,x.sort_order),0)+1};
+ return modal({title:id?'Modifier la catégorie':'Nouvelle catégorie',ok:'Enregistrer',body:`<label>Nom<input name="nm" required maxlength="80" value="${esc(c.name)}"></label><label>Ordre d’affichage<input name="so" type="number" value="${c.sort_order}"></label>`,
+ onOk:async f=>{const row={name:f.elements.nm.value.trim(),sort_order:parseInt(f.elements.so.value,10)||0};await run(()=>id?sb.from('categories').update(row).eq('id',id):sb.from('categories').insert(row))}}).then(ok=>{if(ok){note('Catégorie enregistrée');loadPublic();go('cat')}})}
+
+async function vImg(){
+ const r=await sb.from('site_images').select('key,url');if(r.error)throw new Error(r.error.message);
+ S.im=Object.fromEntries(r.data.map(x=>[x.key,x.url]));
+ ac.innerHTML=hd('Photos du site')+`<p style="opacity:.7;margin-bottom:1rem">Chaque emplacement correspond à une zone du site public. Sans photo importée, le site utilise l’image par défaut du dossier photos/.</p><div class="pg">${Object.keys(KEYS).map(k=>{const u=okUrl(S.im[k]);return `<div class="pc"><div class="th"${u?` style="background-image:url('${u}')"`:''}>${u?'':'Aucune photo importée'}</div><div class="i"><b>${KEYS[k]}</b><small>${k}</small><div class="ar"><button class="ab" data-act="pu" data-k="${k}">${u?'Remplacer':'Importer'}</button>${u?`<button class="ab d" data-act="pd" data-k="${k}">Retirer</button>`:''}</div></div></div>`}).join('')}</div>`}
+const shared=(k,u)=>Object.entries(S.im).some(([kk,v])=>kk!=k&&v==u);
+
+async function vSet(){
+ const r=await sb.from('site_settings').select('key,value');if(r.error)throw new Error(r.error.message);const m=Object.fromEntries(r.data.map(x=>[x.key,x.value]));
+ const F=[['adr','Adresse'],['tel','Téléphone'],['mail','E-mail']];
+ ac.innerHTML=hd('Infos du restaurant')+`<form id="sf" class="pn">${F.map(([k,l])=>`<label>${l}<input name="${k}" maxlength="300" value="${esc(m[k])}"></label>`).join('')}<label>Horaires d’ouverture<textarea name="hor" rows="4" maxlength="600">${esc(m.hor)}</textarea></label><label>Bandeau d’annonce (vide = masqué)<input name="annonce" maxlength="200" value="${esc(m.annonce)}"></label><label>Notre histoire (vide = section masquée)<textarea name="histoire" rows="6" maxlength="1500">${esc(m.histoire)}</textarea></label><label>Horaires en anglais (facultatif)<textarea name="hor_en" rows="3" maxlength="600">${esc(m.hor_en)}</textarea></label><label>Bandeau d’annonce en anglais (facultatif)<input name="annonce_en" maxlength="200" value="${esc(m.annonce_en)}"></label><label>Notre histoire en anglais (facultatif)<textarea name="histoire_en" rows="6" maxlength="1500">${esc(m.histoire_en)}</textarea></label><p class="me" role="alert"></p><div><button class="btn">Enregistrer</button></div></form>`;
+ $('#sf').onsubmit=async ev=>{ev.preventDefault();const E=ev.target.elements,b=$('.btn',ev.target);b.disabled=true;
+  try{const t=new Date().toISOString();await run(()=>sb.from('site_settings').upsert(['adr','tel','mail','hor','annonce','histoire','hor_en','annonce_en','histoire_en'].map(k=>({key:k,value:E[k].value.trim(),updated_at:t}))),'Informations enregistrées');loadPublic()}catch(x){$('.me',ev.target).textContent=x.message}b.disabled=false}}
+
+async function vRes(){
+ const r=await sb.from('reservations').select('*').order('booking_date',{ascending:false}).order('created_at',{ascending:false}).limit(500);if(r.error)throw new Error(r.error.message);S.r=r.data;
+ ac.innerHTML=hd('Réservations')+`<div class="fl2"><select id="rs1" aria-label="Statut"><option value="">Tous les statuts</option>${ST.map(s=>`<option>${s}</option>`).join('')}</select><input type="date" id="rd1" aria-label="Date"><input type="search" id="rq1" placeholder="Nom ou téléphone" aria-label="Rechercher"></div><div id="rt"></div>`;
+ ['rs1','rd1','rq1'].forEach(i=>$('#'+i).oninput=()=>{S.rf={s:$('#rs1').value,d:$('#rd1').value,q:$('#rq1').value.trim().toLowerCase()};rTable()});rTable()}
+function rTable(){const F=S.rf,qd=F.q.replace(/\s/g,''),L=S.r.filter(x=>(!F.s||x.status==F.s)&&(!F.d||x.booking_date==F.d)&&(!F.q||(x.name+' '+x.phone).toLowerCase().includes(F.q)||x.phone.replace(/\s/g,'').includes(qd)));
+ $('#rt').innerHTML=L.length?`<div class="tw"><table><thead><tr><th>Date</th><th>Client</th><th>Pers.</th><th>Statut</th><th></th></tr></thead><tbody>${L.map(x=>`<tr><td>${dfr(x.booking_date)}<br><small>${esc(x.booking_time||'')}</small></td><td><b>${esc(x.name)}</b><br><small>${esc(x.phone)}</small></td><td>${x.guests}</td><td><span class="tag ${x.status}">${x.status}</span></td><td class="ta"><button class="ab" data-act="rv" data-id="${x.id}">Détails</button>${x.status=='nouvelle'?` <button class="ab" data-act="st" data-id="${x.id}" data-v="confirmée">Confirmer</button> <button class="ab" data-act="st" data-id="${x.id}" data-v="refusée">Refuser</button>`:''}${x.status=='confirmée'?` <button class="ab" data-act="st" data-id="${x.id}" data-v="annulée">Annuler</button>`:''} <button class="ab d" data-act="rx" data-id="${x.id}">Supprimer</button></td></tr>`).join('')}</tbody></table></div>`:'<div class="em">Aucune demande ne correspond.</div>'}
+
+const ACT={
+ nav:d=>go(d.v),close:()=>adm.classList.remove('on'),
+ out:async()=>{S.u=null;await sb.auth.signOut();loginView('Vous êtes déconnecté.')},
+ dn:()=>dishForm(),ed:d=>dishForm(d.id),
+ async dd(d){const x=S.d.find(y=>y.id==d.id);if(!await ask('Supprimer ce plat ?',`« ${esc(x.name)} » sera supprimé définitivement de la carte.`,'Supprimer'))return;
+  await run(()=>sb.from('dishes').delete().eq('id',d.id),'Plat supprimé');await rm(x.photo_url);loadPublic();go('dish')},
+ cn:()=>catForm(),ce:d=>catForm(d.id),cv:d=>{S.fc=d.id;go('dish')},
+ async cd(d){const c=S.c.find(x=>x.id==d.id),n=S.d.filter(x=>x.category_id==d.id).length;
+  if(!await ask('Supprimer la catégorie ?',n?`« ${esc(c.name)} » contient <b>${n} plat${n>1?'s':''}</b> : ${n>1?'ils seront supprimés':'il sera supprimé'} <b>définitivement</b> avec la catégorie.`:`« ${esc(c.name)} » est vide.`,'Supprimer'))return;
+  await run(()=>sb.from('categories').delete().eq('id',d.id),'Catégorie supprimée');if(S.fc==d.id)S.fc='';loadPublic();go('cat')},
+ pu(d){const k=d.k,old=S.im[k];return modal({title:KEYS[k],ok:'Envoyer la photo',body:'<label>Photo (JPG, PNG, WebP ou AVIF, 15 Mo max)<input type="file" name="file" accept="image/jpeg,image/png,image/webp,image/avif" required></label><img class="pv" alt="Aperçu" hidden>',
+  onOk:async f=>{const url=await up(f.elements.file.files[0],'site');
+   try{await run(()=>sb.from('site_images').upsert({key:k,url,updated_at:new Date().toISOString()}))}catch(x){await rm(url);throw x}
+   if(old&&!shared(k,old))await rm(old)}}).then(ok=>{if(ok){note('Photo enregistrée');loadPublic();go('img')}})},
+ async pd(d){const k=d.k,u=S.im[k];
+  if(!await ask('Retirer cette photo ?',`L’emplacement « ${esc(KEYS[k])} » est affiché sur le site : il reviendra à l’image par défaut (${esc(DEF[k]||'aucune')}). La photo importée sera supprimée du stockage.`,'Retirer'))return;
+  await run(()=>sb.from('site_images').update({url:'',updated_at:new Date().toISOString()}).eq('key',k),'Photo retirée');if(!shared(k,u))await rm(u);loadPublic();go('img')},
+ async st(d){if(d.v=='annulée'&&!await ask('Annuler cette réservation ?','Le statut passera à « annulée ». Pensez à prévenir le client.','Annuler la réservation'))return;
+  await run(()=>sb.from('reservations').update({status:d.v}).eq('id',d.id),'Réservation : '+d.v);S.r.find(x=>x.id==d.id).status=d.v;rTable()},
+ async rx(d){if(!await ask('Supprimer cette demande ?','La demande sera supprimée définitivement.','Supprimer'))return;
+  await run(()=>sb.from('reservations').delete().eq('id',d.id),'Demande supprimée');S.r=S.r.filter(x=>x.id!=d.id);rTable()},
+ rv(d){const x=S.r.find(y=>y.id==d.id);return modal({title:'Demande de '+x.name,ok:'Fermer',onOk:async()=>{},body:`<dl class="dl"><dt>Statut</dt><dd><span class="tag ${x.status}">${x.status}</span></dd><dt>Date</dt><dd>${dfr(x.booking_date)} ${esc(x.booking_time||'')}</dd><dt>Personnes</dt><dd>${x.guests}</dd><dt>Téléphone</dt><dd>${esc(x.phone)}</dd><dt>E-mail</dt><dd>${esc(x.email||'—')}</dd><dt>Message</dt><dd style="white-space:pre-wrap">${esc(x.message||'—')}</dd><dt>Reçue le</dt><dd>${fd(x.created_at)}</dd></dl>`})}
+};
+adm.addEventListener('click',async ev=>{const b=ev.target.closest('[data-act]');if(!b||!ACT[b.dataset.act])return;try{await ACT[b.dataset.act](b.dataset)}catch(x){note(x.message||'Erreur',1)}});
+adm.addEventListener('change',async ev=>{const t=ev.target;
+ if(t.type=='file'){const p=$('.pv',t.closest('form')),f=t.files[0];if(p&&f){p.src=URL.createObjectURL(f);p.hidden=false}}
+ else if(t.dataset.tog){try{await run(()=>sb.from('dishes').update({is_available:t.checked}).eq('id',t.dataset.tog),'Disponibilité mise à jour');loadPublic()}catch(x){t.checked=!t.checked;note(x.message,1)}}});
+const open=()=>gate();$('#oa').onclick=ev=>{ev.preventDefault();open()};
+addEventListener('hashchange',()=>{if(location.hash=='#admin')open()});if(location.hash=='#admin')open();
+/* ---------- annonce (bandeau), histoire, appel mobile, carte en un clic : contenus modifiables depuis l'admin ---------- */
+let X={};const an2=document.createElement('div');an2.id='an2';an2.setAttribute('role','status');an2.setAttribute('aria-hidden','true');an2.innerHTML='<span></span><button type="button" aria-label="Fermer l’annonce">✕</button>';document.body.appendChild(an2);
+function extras(m){X=m;const en=LG=='en',t=((en&&m.annonce_en)||m.annonce||'').trim(),h=((en&&m.histoire_en)||m.histoire||'').trim();let seen='';try{seen=sessionStorage.getItem('annonce-fermee')||''}catch(_){}
+ $('span',an2).textContent=t;const show=!!t&&seen!=t;an2.setAttribute('aria-hidden',String(!show));setTimeout(()=>an2.classList.toggle('on',show),show?1800:0);
+ $('#hip').textContent=h;$('#histoire').hidden=!h}
+$('button',an2).onclick=()=>{an2.classList.remove('on');an2.setAttribute('aria-hidden','true');try{sessionStorage.setItem('annonce-fermee',$('span',an2).textContent)}catch(_){}};
+const tl=()=>{$('#bcall').href='tel:+33'+INFO.tel.replace(/\s/g,'').slice(1)};tl();
+$('#mpb').onclick=()=>{const f=document.createElement('iframe');f.src='https://www.google.com/maps?q='+encodeURIComponent(INFO.adr)+'&output=embed';f.loading='lazy';f.title='Carte : emplacement du restaurant';f.referrerPolicy='no-referrer-when-downgrade';$('#mp').replaceChildren(f)};
+
+/* ---------- FR / EN : textes du site ; la carte et les infos saisies dans l'admin restent telles qu'écrites ---------- */
+const TR=[['nav a',['The restaurant','Menu','Specialties','Terrace','Gallery','Info','Book']],
+['.hero h1 .mk>span',['Come hibernate with us,','we’ll take care of the rest.'],'hh'],
+['.hero p',['Savoyard specialties and indulgent crêpes, right on the snow front of Valmeinier 1800. After skiing, the stop you can’t miss.']],['.hero .bt a',['See the menu','Book a table']],
+['.eb',['Le Chardon Bleu by La Marmotte Affamée','The restaurant','Le Chardon Bleu','The menu','Savoyard specialties','The terrace','The gallery','Practical info','Booking']],
+['h2.mk>span',['Skis still on, appetite already at the table','Our story','After the snow, the table.','The menu, mountain style','The specialties','The terrace, facing the snow','A taste in pictures','Skis at rest, appetite awake.','Come and see us','We’ll keep a table warm for you'],'mk'],
+['p[data-hl]',['On the snow front of Valmeinier 1800, La Marmotte Affamée opens its door: home cooking, Savoyard specialties, crêpes that warm you up, and that mountain view you never tire of. With friends or family, make yourselves at home: we’ll take care of the rest.','Savoyard specialties and crêpes: here, we cook for those who are hungry for fresh mountain air… and for indulgence.','Put your skis down, settle in facing the slopes and let the mountains set the scene: the winter light, the peaks as a backdrop and the cheerful buzz of the resort, right next door.'],'hl'],
+['.ft b',['Home cooking','Mountain view','Après-ski']],['.ft span',['Dishes made with love, mountain style.','The peaks right in front of you, from the first bite.','The right reflex when you come down from the slopes.']],
+['#carte .demo',['Demo data: dishes and prices to be replaced with the real menu']],['#carte .w>p',['A dish that warms you up, a crêpe that makes you smile: pick a category and treat yourself.']],
+['.sp h3',['Savoyard classics','Crêpes','The après-ski break']],['.sp p',['The comfort of the chalets, piping hot, to share after a day on the slopes.','Golden, indulgent, perfect to finish on a sweet note.','A little hunger, a drink, and the mountain in front of you.']],['.bgt',['Savoyard']],
+['.ch b',['Mountain view','Snow front','Terrace','Après-ski']],['.ch span',['The peaks, effortlessly.','Steps from the slopes.','Fresh air and light.','The stop you can’t miss.']],
+['#galerie .w>p',['Tap a photo to see it full size.']],['.ic h3',['Address','Phone','E-mail','Instagram','Opening hours','Directions']],
+['#mp p',['See the restaurant’s location on the map']],['#mpb',['Show the map']],
+['#reservation .w>p',['Tell us when you’re arriving: your request goes to the restaurant, which then confirms your table.']],
+['#rf label',['Name','Phone','Date','Preferred time','Number of guests','E-mail','Message']],['#rf button[type=submit]',['Send request']],
+['footer h3',['Le Chardon Bleu','Navigation']],['footer a[href^="#"]',['The menu','Gallery','Book','Admin area']],['footer summary',['Legal notice']],['footer details',['To be completed: publisher, host, personal data.'],'tn'],['#bar a',['Call','Book']]];
+const rd=(el,k)=>k=='tn'?el.lastChild.nodeValue:k=='mk'||k=='hh'?$('.vh',el).textContent:el.textContent;
+function wr(el,v,k,i){
+ if(k=='tn')el.lastChild.nodeValue=v;
+ else if(k=='hl'){el.innerHTML=v.split(' ').map(w=>'<span class="sw">'+w+'</span>').join(' ');const h=HL.find(x=>x[0]==el);if(h)h[1]=$$('.sw',el)}
+ else if(k=='mk'||k=='hh'){el.textContent=v;split(el,k=='hh'?1:0,.4+i*.55);const m=el.parentElement;if(m.classList.contains('in')){m.classList.remove('in');void m.offsetWidth;m.classList.add('in')}}
+ else el.textContent=v}
+function fx(){const h=$('[data-f=hor]');if(h)h.textContent=LG=='en'?(X.hor_en||(INFO.hor==M.hor[0]?M.hor[1]:INFO.hor)):INFO.hor}
+function applyLang(l){LG=l;const en=l=='en';document.documentElement.lang=l;try{localStorage.setItem('lang',l)}catch(_){}
+ TR.forEach(([sel,a,k])=>$$(sel).forEach((el,i)=>{if(a[i]==null)return;if(el._fr==null)el._fr=rd(el,k);wr(el,en?a[i]:el._fr,k,i)}));
+ const nv=$$('nav a');$$('#rail a').forEach((a,i)=>{const t=nv[i].textContent;a.dataset.t=t;a.setAttribute('aria-label',t)});
+ $('#mq').innerHTML='<div>'+(en?'Come hibernate with us ✦ Savoyard specialties ✦ Crêpes ✦ Valmeinier 1800 ✦ Snow front ✦ ':'Venez hiberner avec nous ✦ Spécialités savoyardes ✦ Crêpes ✦ Valmeinier 1800 ✦ Front de neige ✦ ').repeat(12)+'</div>';
+ const ks=$('#k'),ix=ks.selectedIndex;ks.innerHTML=Array.from({length:12},(_,i)=>'<option>'+(i+1)+' '+T('pers',i+1)+'</option>').join('');ks.selectedIndex=Math.max(0,ix);
+ $('nav').dataset.s=en?'Valmeinier 1800 · Snow front':'Valmeinier 1800 · Front de neige';
+ [[$('meta[name=description]'),'Le Chardon Bleu by La Marmotte Affamée, on the snow front in Valmeinier 1800: the après-ski stop for Savoyard specialties and crêpes. Come hibernate with us!'],[$('meta[property="og:description"]'),'Savoyard specialties and crêpes on the snow front in Valmeinier 1800.']].forEach(([m,t])=>{m._fr??=m.content;m.content=en?t:m._fr});
+ const b=$('#lang');b.textContent=en?'FR':'EN';b.lang=en?'fr':'en';b.setAttribute('aria-label',en?'Passer en français':'Switch to English');
+ tabs();info();fx();extras(X);sc()}
+$('#lang').onclick=()=>applyLang(LG=='en'?'fr':'en');if(LG=='en')applyLang('en');
+loadPublic();
+})();
+</script>
+</body></html>
