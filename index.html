@@ -525,7 +525,7 @@ img();tabs();sc();
 /* ===== SUPABASE : données publiques, réservations, espace administrateur ===== */
 (()=>{
 /* >>> À RENSEIGNER : URL du projet + clé PUBLIQUE (anon / publishable). JAMAIS la clé service_role. */
-const SB_URL='https://VOTRE-PROJET.supabase.co',SB_KEY='VOTRE_CLE_ANON_OU_PUBLISHABLE';
+const SB_URL='https://tstkjjycdhbgciyocpgp.supabase.co',SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzdGtqanljZGhiZ2NpeW9jcGdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTU1NjYxNjYsImV4cCI6MjExMTE0MjE2Nn0.dgcGxVO14B4BXoX9vM8xu24Nn-YgHUfeUhUkrJ-1WuI';
 const sb=window.supabase&&!/VOTRE/.test(SB_URL+SB_KEY)?supabase.createClient(SB_URL,SB_KEY):null;
 const DEF={...IMG},ST=['nouvelle','confirmée','refusée','annulée'];
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
