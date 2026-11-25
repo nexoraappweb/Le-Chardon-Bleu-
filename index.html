@@ -1,1 +1,486 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Le Chardon Bleu by La Marmotte Affamée — Valmeinier 1800</title>
+<meta name="description" content="Le Chardon Bleu by La Marmotte Affamée, au front de neige de Valmeinier 1800 : l’arrêt gourmand d’après-ski, spécialités savoyardes et crêpes. Venez hiberner avec nous !">
+<style>
+:root{--c:#f6ecd6;--b:#2a1a10;--a:#d99a1c;--o:#8a4b1f;--e:cubic-bezier(.2,.8,.2,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font:17px/1.7 Georgia,'Times New Roman',serif;background:var(--b);color:var(--c);overflow-x:hidden}
+a{color:inherit}h1,h2,h3{line-height:1.05;font-weight:900}
+h2{font-size:clamp(2.2rem,6vw,4.4rem);margin-bottom:1.2rem}
+section{position:relative;padding:clamp(4rem,10vw,8rem) 6vw}
+.cr{background:var(--c);color:var(--b)}
+.w{max-width:1150px;margin:auto}
+.mk{display:block;overflow:hidden;padding-bottom:.1em}
+.mk>span{display:block;transform:translateY(110%);transition:transform 1.1s var(--e) var(--d,0s)}
+.mk.in>span{transform:none}
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--e) var(--d,0s),transform 1s var(--e) var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.btn{position:relative;isolation:isolate;overflow:hidden;display:inline-block;padding:.9rem 1.7rem;border:2px solid var(--a);border-radius:99px;background:var(--a);color:var(--b);font:700 .9rem/1 Georgia,serif;letter-spacing:.06em;text-decoration:none;cursor:pointer;transition:color .4s,transform .3s}
+.btn::before{content:"";position:absolute;inset:0;background:var(--b);transform:translateY(101%);transition:transform .45s var(--e);z-index:-1}
+.btn:hover{color:var(--a);transform:translateY(-2px)}.btn:hover::before{transform:none}
+.btn.g{background:transparent;color:var(--c)}.btn.g::before{background:var(--a)}.btn.g:hover{color:var(--b)}
+.cr .btn:hover{color:var(--a)}.cr .btn.g{color:var(--b)}
+:focus-visible{outline:3px solid var(--a);outline-offset:3px}
+input,select,textarea{font:inherit;padding:.8rem 1rem;border-radius:10px;border:1px solid rgba(128,128,128,.4);background:rgba(128,128,128,.12);color:inherit;width:100%;color-scheme:dark}
+.cr input{color-scheme:light}option{color:#000}
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:.8rem 5vw;transition:background .4s,padding .4s}
+header.sc{background:rgba(42,26,16,.95);padding:.35rem 5vw}
+header .lg{height:60px;border-radius:50%;position:relative;z-index:2;transition:height .4s}header.sc .lg{height:46px}
+nav a{margin:0 .9rem;text-decoration:none;font-size:.95rem;position:relative}
+nav a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--a);transform:scaleX(0);transition:transform .35s var(--e)}
+nav a:hover::after{transform:scaleX(1)}
+.bg{display:none;position:relative;z-index:2;background:none;border:0;width:44px;height:44px;cursor:pointer}
+.bg i,.bg::before,.bg::after{content:"";position:absolute;left:10px;right:10px;height:2px;background:var(--c);transition:.4s var(--e)}
+.bg::before{top:15px}.bg i{top:21px}.bg::after{top:27px}
+header.open .bg::before{top:21px;transform:rotate(45deg)}header.open .bg i{opacity:0}header.open .bg::after{top:21px;transform:rotate(-45deg)}
+@media(max-width:900px){.bg{display:block}
+nav{position:fixed;inset:0;z-index:1;background:var(--b);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.2rem;clip-path:circle(0 at 92% 5%);transition:clip-path .7s var(--e)}
+header.open nav{clip-path:circle(150% at 92% 5%)}nav a{font-size:1.8rem;margin:0}}
+/* photos */
+.ph{position:relative;overflow:hidden;background:linear-gradient(135deg,#4a3526,#2a1a10)}
+.ph>i{position:absolute;inset:0;background:center/cover;transition:transform 1.4s var(--e)}
+.ph::after{content:attr(data-l);position:absolute;left:.9rem;bottom:.7rem;max-width:85%;font:.7rem/1.3 sans-serif;opacity:.65;z-index:2}
+.ph.has::after{display:none}
+.ph:hover>i{transform:scale(1.07)}
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;padding-top:6rem;overflow:hidden}
+.hbg{position:absolute;inset:-15% 0 0}.hbg>i{animation:kb 26s ease-in-out infinite alternate}
+@keyframes kb{to{transform:scale(1.12)}}
+.hbg::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(42,26,16,.6),rgba(42,26,16,.25) 45%,var(--b))}
+.hc{position:relative;z-index:3;display:grid;grid-template-columns:auto 1fr;gap:3.5rem;align-items:center;max-width:1150px;margin:auto}
+.hero .seal{width:min(32vw,340px);border-radius:50%;box-shadow:0 25px 90px #000b;animation:fl 7s ease-in-out infinite alternate}
+@keyframes fl{to{transform:translateY(-14px) rotate(-2deg)}}
+.hero h1{font-size:clamp(2.6rem,7.5vw,6rem)}
+.hero p{max-width:34ch;margin:1.2rem 0 2rem;font-size:1.2rem}
+.hero .bt{display:flex;gap:.8rem;flex-wrap:wrap}
+.sd{position:absolute;bottom:1.5rem;left:50%;z-index:4;width:24px;height:40px;margin-left:-12px;border:2px solid var(--c);border-radius:12px}
+.sd::after{content:"";position:absolute;left:9px;top:7px;width:4px;height:8px;border-radius:2px;background:var(--a);animation:sdp 1.8s infinite}
+@keyframes sdp{50%{transform:translateY(10px);opacity:.2}}
+@media(max-width:760px){.hc{grid-template-columns:1fr;text-align:center;gap:1.5rem}.hero .seal{width:56vw;margin:auto}.hero p{margin-inline:auto}.hero .bt{justify-content:center}}
+.mq{position:relative;z-index:5;background:var(--a);color:var(--b);overflow:hidden;white-space:nowrap;padding:.8rem 0;font-weight:900;font-size:1.1rem;transform:rotate(-1.5deg);margin:-1rem -3vw 1rem}
+.mq div{display:inline-block;animation:mq 40s linear infinite}@keyframes mq{to{transform:translateX(-50%)}}
+/* restaurant */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.tall{aspect-ratio:4/5;border-radius:200px 200px 12px 12px}
+.pw{position:relative}.pw .seal{position:absolute;right:-1.5rem;bottom:-2rem;width:130px;border-radius:50%;animation:sp 50s linear infinite;box-shadow:0 10px 40px #0008}
+@keyframes sp{to{transform:rotate(360deg)}}
+.ft{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem}
+.ft div{border-left:3px solid var(--a);padding-left:1rem}.ft b{display:block;font-size:1.05rem}.ft span{font-size:.92rem;opacity:.8}
+@media(max-width:860px){.two{grid-template-columns:1fr;gap:3rem}.ft{grid-template-columns:1fr}.pw .seal{right:.5rem}}
+/* carte */
+.demo{display:inline-block;background:var(--b);color:var(--a);padding:.4rem 1rem;border-radius:99px;font-size:.85rem;margin:.5rem 0 1.5rem}
+#tabs{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
+#tabs button{font:inherit;font-size:.95rem;padding:.6rem 1.2rem;border-radius:99px;border:2px solid var(--b);background:none;color:var(--b);cursor:pointer;transition:.3s}
+#tabs button:hover{background:rgba(42,26,16,.1)}#tabs button.on{background:var(--b);color:var(--a)}
+#dishes{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.2rem}
+.di{background:#fffaf0;border:1px solid rgba(42,26,16,.15);border-radius:14px;padding:1.4rem;opacity:0;transform:translateY(24px)}
+#dishes.in .di{opacity:1;transform:none;transition:opacity .7s var(--e) var(--d),transform .7s var(--e) var(--d),box-shadow .3s}
+#dishes.in .di:hover{box-shadow:0 12px 30px rgba(42,26,16,.18);transform:translateY(-4px)}
+.di div{display:flex;justify-content:space-between;gap:1rem;align-items:baseline}.di h3{font-size:1.2rem}.di div span{color:var(--o);font-weight:700;white-space:nowrap}
+.di p{margin:.5rem 0;font-size:.95rem}.di small{opacity:.65}
+/* spécialités */
+.sp{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem}
+.sp .ph{aspect-ratio:3/4;display:flex;align-items:flex-end;padding:1.5rem;border-radius:12px}
+.sp .ph:nth-child(2){margin-top:3rem}
+.sp .ph::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 40%,rgba(20,10,4,.9))}
+.sp h3{position:relative;z-index:2;font-size:1.7rem}.sp p{position:relative;z-index:2;font-size:.9rem}
+.sp .ph::after{top:.7rem;bottom:auto}
+@media(max-width:760px){.sp{grid-template-columns:1fr}.sp .ph:nth-child(2){margin-top:0}.sp .ph{aspect-ratio:4/3}}
+/* terrasse */
+.tr{overflow:hidden;min-height:90vh;display:flex;align-items:center}
+.tbg{position:absolute;inset:-15% 0}
+.tbg::before{content:"";position:absolute;inset:0;z-index:1;background:rgba(30,16,8,.62)}
+.tr .w{position:relative;z-index:3}.tr .w>p{max-width:46ch}
+.ch{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem}
+.ch div{border-top:2px solid var(--a);padding-top:.8rem}.ch b{display:block;font-size:1.2rem}.ch span{font-size:.9rem;opacity:.85}
+@media(max-width:760px){.ch{grid-template-columns:1fr 1fr}}
+/* galerie */
+.gl{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:.8rem;margin-top:2rem}
+.gi{border:0;cursor:zoom-in;border-radius:10px;color:var(--c)}.gi.w2{grid-column:span 2}.gi.h2{grid-row:span 2}
+@media(max-width:760px){.gl{grid-template-columns:1fr 1fr;grid-auto-rows:150px}}
+#lb{position:fixed;inset:0;z-index:90;background:#000d;display:grid;place-items:center;opacity:0;pointer-events:none;transition:opacity .4s}
+#lb.on{opacity:1;pointer-events:auto}
+#lbi{width:min(92vw,1000px);aspect-ratio:3/2;background:#4a2c14 center/cover;transform:scale(.88);transition:transform .7s var(--e);display:grid;place-items:center;padding:1rem;text-align:center;border-radius:12px}
+#lb.on #lbi{transform:none}
+/* infos */
+.ig{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:2rem}
+.ic{border:1px solid rgba(42,26,16,.2);border-radius:14px;padding:1.5rem;transition:transform .4s var(--e),background .3s}
+.ic:hover{transform:translateY(-5px);background:#fffaf0}.ic h3{font-size:1.15rem;margin-bottom:.4rem;color:var(--o)}
+.ic a{text-decoration-color:var(--a);text-underline-offset:4px;word-break:break-word}
+/* réservation */
+form{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:760px;margin-top:2rem}
+form label{display:block;font-size:.9rem;margin-bottom:.3rem}form .f{grid-column:1/-1}
+@media(max-width:600px){form{grid-template-columns:1fr}}
+#rs{display:none;margin-top:1.2rem;padding:1rem 1.2rem;border-left:4px solid var(--a);background:rgba(217,154,28,.15);max-width:760px}#rs.on{display:block}
+/* footer */
+footer{background:#1b100a;padding:4rem 6vw 2rem}
+.fg{display:grid;grid-template-columns:auto 1fr 1fr;gap:3rem;align-items:start;max-width:1150px;margin:auto}
+footer .lg{width:130px;border-radius:50%}footer a{display:block;text-decoration:none;opacity:.85;margin:.2rem 0}footer a:hover{color:var(--a)}
+footer h3{font-size:1.1rem;color:var(--a);margin-bottom:.5rem}
+footer details{margin-top:.6rem;font-size:.9rem;opacity:.8}footer small{display:block;text-align:center;margin-top:3rem;opacity:.6}
+@media(max-width:760px){.fg{grid-template-columns:1fr}}
+/* admin */
+#adm{position:fixed;inset:0;z-index:100;background:#1b100a;display:none;overflow:auto}#adm.on{display:flex}
+#an{width:220px;flex:none;padding:1.5rem 1rem;border-right:1px solid #fff2;display:flex;flex-direction:column;gap:.4rem}
+#an button,.x{font:inherit;text-align:left;padding:.7rem 1rem;border-radius:10px;border:0;background:none;color:var(--c);cursor:pointer}
+#an button.on{background:var(--a);color:var(--b)}#an button:hover:not(.on){background:#fff1}
+#ac{flex:1;padding:2rem;min-width:0}#ac h2{font-size:2rem}
+.ar{display:flex;gap:.5rem;margin-bottom:.5rem;flex-wrap:wrap}.ar>*{flex:1 1 140px}.ar .x{flex:0 0 44px;background:#a33;text-align:center}
+.kp{display:flex;gap:1rem;flex-wrap:wrap;margin:1rem 0}.kp div{flex:1 1 150px;background:#fff1;border-radius:14px;padding:1.2rem}.kp b{display:block;font-size:2.6rem;color:var(--a)}
+@media(max-width:760px){#adm.on{flex-direction:column}#an{width:auto;flex-direction:row;overflow:auto;border:0}#an button{white-space:nowrap}}
+#ts{position:fixed;bottom:1.5rem;left:50%;transform:translate(-50%,100px);background:var(--a);color:var(--b);padding:.7rem 1.4rem;border-radius:99px;z-index:200;transition:transform .5s var(--e)}#ts.on{transform:translate(-50%,0)}
+@media(prefers-reduced-motion:reduce){*,::before,::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv,.mk>span,.di{opacity:1!important;transform:none!important}}
+</style>
+<style id="m2">
+/* PHASE 2 — le JS pose --p (0→1 pendant la traversée d'une section) et --in (0→1 à l'entrée) ; le CSS en fait des effets scrubés */
+.mk.sx>span{transform:none}.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.wd{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .02em .14em}
+.wd>b{display:inline-block;font-weight:inherit;transform:translateY(115%) rotate(7deg);transform-origin:0 100%;transition:transform 1.1s var(--e) var(--d,0s)}
+.mk.in .wd>b{transform:none}
+header{animation:hd 1s .5s var(--e) backwards}@keyframes hd{from{transform:translateY(-100%)}}
+#pb{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:var(--a);transform-origin:0 50%;transform:scaleX(var(--sp,0))}
+/* hero */
+.hbg>i{animation:zin 2.6s var(--e) both,kb 26s 2.6s ease-in-out infinite alternate}@keyframes zin{from{transform:scale(1.35)}}
+.hero .hc{transform:translateY(calc(var(--p,0)*-70px));opacity:calc(1 - var(--p,0)*1.5)}
+.hero .sd{opacity:calc(1 - var(--p,0)*5)}
+.hero .seal{animation:lr 1.6s .2s var(--e) both,ring 1.8s 1.1s both,fl 7s 2.8s ease-in-out infinite alternate}
+@keyframes lr{from{clip-path:circle(0);scale:1.5;rotate:-30deg;opacity:0}to{clip-path:circle(71%)}}
+@keyframes ring{from{box-shadow:0 25px 90px #000b,0 0 0 0 rgba(217,154,28,.7)}to{box-shadow:0 25px 90px #000b,0 0 0 60px rgba(217,154,28,0)}}
+.lt{position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(50% 45% at 75% 25%,rgba(255,196,96,.38),transparent 70%);mix-blend-mode:screen;animation:lt 10s ease-in-out infinite alternate}@keyframes lt{to{opacity:.3;transform:translateX(-8%)}}
+.mq:hover div{animation-play-state:paused}
+/* transitions de sections : crêtes de montagne qui glissent */
+footer{position:relative}
+.rg{--bgc:var(--b)}.rg.cr{--bgc:var(--c)}footer.rg{--bgc:#1b100a}
+.rg::before{content:"";position:absolute;left:0;right:0;top:-119px;height:120px;background:linear-gradient(to bottom,transparent,var(--bgc));pointer-events:none}
+/* restaurant */
+.pw{translate:0 calc((var(--p,.5) - .5)*60px)}.two>div:last-child{translate:0 calc((var(--p,.5) - .5)*-60px)}
+.tall{--r:min(1,calc(var(--in,1)*1.7));clip-path:inset(calc(32%*(1 - var(--r))) calc(22%*(1 - var(--r))) round 200px 200px 12px 12px)}
+.pw .tall>i{transform:scale(calc(1.4 - var(--in,1)*.4));transition:transform .5s linear}
+.pw .seal{animation:none;rotate:calc(var(--p,.5)*420deg);translate:0 calc((var(--p,.5) - .5)*-80px)}
+.ft div{transition:translate .4s var(--e),border-color .3s}.ft div:hover{translate:6px 0;border-color:var(--o)}
+/* carte */
+#tabs{position:relative}#tp{position:absolute;left:0;top:0;background:var(--b);border-radius:99px;transition:transform .6s var(--e),width .6s var(--e);z-index:0}
+#tabs button{position:relative;z-index:1}#tabs button.on{background:none;color:var(--a)}
+.di{position:relative;overflow:hidden}
+.di::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(217,154,28,.22),transparent 70%);opacity:0;transition:opacity .4s}
+.di:hover::before{opacity:1}
+.di::after{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:var(--a);transform:scaleX(0);transform-origin:0 50%;transition:transform .6s var(--e)}.di:hover::after{transform:none}
+.di .pr{background:var(--b);color:var(--a);padding:.1rem .7rem;border-radius:99px;font-variant-numeric:tabular-nums}
+#dishes .di.out{opacity:0;transform:translateY(-18px) scale(.96);transition:opacity .3s,transform .3s}
+/* spécialités : trois mises en scène */
+#specialites{isolation:isolate}
+.bgt{position:absolute;z-index:-1;top:6%;left:0;font:900 clamp(6rem,22vw,20rem)/1 Georgia,serif;white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(217,154,28,.22);translate:calc(var(--p,.5)*-40%) 0;pointer-events:none;user-select:none}
+.sp{grid-template-columns:1.3fr 1fr 1fr;align-items:start;gap:1.5rem}
+.sp .ph{opacity:1;transform:none;transition:clip-path 1.5s var(--e) var(--d);translate:0 calc((var(--p,.5) - .5)*var(--k)*1px)}
+.sp .ph:nth-child(1){--k:-70;aspect-ratio:3/4.1;clip-path:inset(0 100% 0 0)}
+.sp .ph:nth-child(2){--k:-160;aspect-ratio:4/5;margin-top:5rem;border-radius:150px 150px 12px 12px;clip-path:inset(100% 0 0 0)}
+.sp .ph:nth-child(3){--k:-110;aspect-ratio:1;margin-top:2rem;rotate:1.5deg;clip-path:circle(0 at 50% 50%)}
+.sp .ph.in{clip-path:inset(0)}.sp .ph:nth-child(3).in{clip-path:circle(75% at 50% 50%)}
+.sp .ph>i{transform:scale(1.4);transition:transform 2.2s var(--e) var(--d)}.sp .ph.in>i{transform:none}.sp .ph.in:hover>i{transform:scale(1.08);transition:transform 1.2s var(--e)}
+.sp .ph>div{position:relative;z-index:2;opacity:0;transform:translateY(30px);transition:opacity .9s var(--e) calc(var(--d,0s) + .7s),transform .9s var(--e) calc(var(--d,0s) + .7s)}.sp .ph.in>div{opacity:1;transform:none}
+/* terrasse : relief, pins, coucher de soleil qui monte */
+.tr::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(60% 60% at 82% 88%,rgba(255,160,45,.65),transparent 70%);opacity:calc(var(--p,.5)*.6);mix-blend-mode:screen}
+.ch div{translate:var(--tx,0) 0}.ch div:nth-child(odd){--tx:-40px}.ch div:nth-child(even){--tx:40px}.ch div.in{translate:0 0}
+.ch div.rv{transition:opacity 1s var(--e) var(--d,0s),transform 1s var(--e) var(--d,0s),translate 1.2s var(--e) var(--d,0s)}
+/* galerie : composition libre */
+.gl{grid-template-columns:repeat(12,1fr);grid-auto-rows:64px;gap:.9rem;margin-top:3rem}
+.gl .gi{opacity:1;transform:none;clip-path:inset(0 0 100% 0);transition:clip-path 1.3s var(--e) var(--d),scale .5s var(--e);translate:0 calc((var(--p,.5) - .5)*var(--k,0)*1px)}
+.gl .gi.in{clip-path:inset(0)}.gl .gi:hover{scale:1.04;z-index:3}
+.gl .gi::before{content:"＋";position:absolute;inset:0;z-index:2;display:grid;place-items:center;font-size:2.4rem;color:var(--c);background:rgba(42,26,16,.45);opacity:0;transition:opacity .4s}.gl .gi:hover::before{opacity:1}
+.gl .gi:nth-child(1){grid-area:1/1/6/6;rotate:-1.5deg;--k:-40}.gl .gi:nth-child(2){grid-area:2/6/6/9;--k:-90}.gl .gi:nth-child(3){grid-area:1/9/5/13;rotate:1.5deg;--k:-60}
+.gl .gi:nth-child(4){grid-area:6/2/10/8;rotate:-1deg;--k:-30}.gl .gi:nth-child(5){grid-area:6/8/10/11;--k:-110}.gl .gi:nth-child(6){grid-area:5/11/9/13;rotate:2deg;--k:-70}
+/* lightbox */
+#lb{opacity:1;background:rgba(15,8,3,.95);backdrop-filter:blur(6px);clip-path:circle(0 at var(--ox,50%) var(--oy,50%));transition:clip-path .8s var(--e)}
+#lb.on{clip-path:circle(150% at var(--ox,50%) var(--oy,50%))}
+#lbi.sw{animation:sw .8s var(--e)}@keyframes sw{from{opacity:0;transform:translateX(var(--dx,0)) scale(.94)}}
+.lc,.ln{position:absolute;z-index:2;width:52px;height:52px;border-radius:50%;border:2px solid var(--a);background:none;color:var(--a);font-size:1.6rem;cursor:pointer;transition:background .3s,color .3s,scale .3s var(--e)}
+.lc:hover,.ln:hover{background:var(--a);color:var(--b);scale:1.1}.lc{top:1.2rem;right:1.2rem}.ln{top:50%;margin-top:-26px}.ln.p{left:1.2rem}.ln.n{right:1.2rem}
+#lbn{position:absolute;bottom:1.4rem;left:0;right:0;text-align:center;color:var(--a)}
+/* micro-interactions */
+.btn::before{transform:none;clip-path:circle(0 at var(--bx,50%) var(--by,100%));transition:clip-path .6s var(--e)}
+.btn:hover::before{clip-path:circle(160% at var(--bx,50%) var(--by,100%))}
+.btn{transition:color .4s,translate .5s var(--e),transform .3s}.btn:active{scale:.96}
+nav a.act::after{transform:scaleX(1)}
+input,select,textarea{transition:border-color .3s,box-shadow .3s}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--a);box-shadow:0 0 0 4px rgba(217,154,28,.28)}
+form div:focus-within>label{color:var(--o);transition:color .3s}
+.wt{animation:pls .8s infinite alternate}@keyframes pls{to{opacity:.55}}
+#rs.on{animation:pop .7s var(--e)}@keyframes pop{from{opacity:0;transform:translateY(18px) scale(.97)}}
+@media(max-width:900px){nav a{opacity:0;transform:translateY(40px) skewY(5deg);transition:opacity .35s,transform .35s}
+header.open nav a{opacity:1;transform:none;transition:opacity .7s var(--e) calc(.3s + var(--n)*.08s),transform .8s var(--e) calc(.3s + var(--n)*.08s)}
+nav::after{content:"Valmeinier 1800 · Front de neige";position:absolute;bottom:6vh;opacity:0;font-size:.9rem;color:var(--a);transition:opacity .6s}header.open nav::after{opacity:.9;transition-delay:.9s}
+}
+@media(max-width:760px){.sp{grid-template-columns:1fr}.sp .ph:nth-child(n){margin-top:0;aspect-ratio:4/3;translate:none;rotate:0deg}
+.gl{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.gl .gi:nth-child(n){grid-area:auto;rotate:0deg;translate:none}.gl .gi:nth-child(1){grid-area:span 2/span 2}.lt,.bgt{display:none}}
+@media(hover:none){.di::before{display:none}}
+@media(prefers-reduced-motion:reduce){.wd>b,.sp .ph,.sp .ph>div,.gl .gi,.ch div{clip-path:none!important;transform:none!important;opacity:1!important;translate:none!important}.tall{clip-path:none}.hero .hc{opacity:1;transform:none}}
+/* PHASE 3 — direction photographique : aucun décor dessiné ; transitions = photos, masques, dégradés */
+.ph:not(.has)::after{font-size:.78rem;opacity:.85}
+.hs{position:absolute;inset:0;opacity:0;transition:opacity 1.8s ease}.hs.on{opacity:1}
+.hs.on>i{animation:kb2 11s ease-out both}@keyframes kb2{from{transform:scale(1.2)}to{transform:scale(1.02)}}
+.pw .sm{position:absolute;left:-9%;bottom:-7%;width:46%;aspect-ratio:1;border:6px solid var(--b);border-radius:12px;box-shadow:0 20px 50px #0009;z-index:2;translate:0 calc((var(--p,.5) - .5)*-130px);clip-path:inset(calc(100%*(1 - min(1,calc(var(--in,1)*1.4)))) 0 0 0)}
+.pw .sm>i{transform:scale(calc(1.3 - var(--in,1)*.3));transition:transform .5s linear}
+.bd{padding:0;height:min(75vh,640px);overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;--r:min(1,calc(var(--in,1)*1.6));clip-path:inset(calc(14%*(1 - var(--r))) calc(7%*(1 - var(--r))))}
+.bd>.ph{position:absolute;inset:-15% 0}.bd>.ph>i{transform:scale(calc(1.05 + var(--p,.5)*.2));transition:transform .4s linear}
+.bd::after{content:"";position:absolute;inset:0;z-index:1;background:rgba(25,13,6,.5)}
+.bd::before{content:"";position:absolute;inset:0 0 auto;height:120px;z-index:2;background:linear-gradient(var(--tp,var(--b)),transparent)}#b2{--tp:var(--c)}
+.bd h2{position:relative;z-index:3;max-width:16ch;margin:0;font-size:clamp(2.4rem,7vw,5.5rem)}
+.tr .fl{position:absolute;z-index:3;right:6vw;top:14%;width:min(26vw,360px);aspect-ratio:4/5;border-radius:12px;box-shadow:0 24px 60px #000a;opacity:1;transform:none;clip-path:inset(0 0 0 100%);transition:clip-path 1.4s var(--e) .2s;translate:0 calc((var(--p,.5) - .5)*-150px)}.tr .fl.in{clip-path:inset(0)}
+@media(min-width:861px){.tr .w h2,.tr .w>p{max-width:min(620px,62%)}}
+@media(max-width:860px){.tr .fl{display:none}.pw .sm{left:-3%}}
+@media(prefers-reduced-motion:reduce){.bd,.tr .fl,.pw .sm{clip-path:none!important}.hs{transition:none}}
+/* PHASE 4 — fond photographique fixe, fondu enchaîné au scroll */
+#bk{position:fixed;inset:0;z-index:-1;overflow:hidden;background:var(--b)}
+#bk::after{content:"";position:absolute;inset:0;z-index:3;background:linear-gradient(rgba(42,26,16,.78),rgba(26,14,7,.9))}
+#bk .ph::after{display:none}.bks{position:absolute;inset:0;opacity:0;transition:opacity 1.8s ease}.bks.on{opacity:1}
+.bks>i{transform:scale(calc(1.08 + var(--sp,0)*.2));transition:transform .6s linear}
+.cr{background:rgba(246,236,214,.94)}
+/* PHASE 5 — mise en page, textes, scroll maximal */
+section{padding-block:clamp(5rem,11vw,9rem)}.hero{padding-bottom:5rem}h2{text-wrap:balance}p{text-wrap:pretty}
+.w>p{max-width:54ch;margin-bottom:.5rem}.two h2{font-size:clamp(2rem,4.6vw,3.7rem)}
+.hero h1{font-size:clamp(2.3rem,5.8vw,4.9rem)}.hero p{max-width:40ch}
+.eb{display:block;color:var(--a);letter-spacing:.28em;text-transform:uppercase;font-size:.75rem;font-weight:700;margin-bottom:1.1rem}
+.sw{opacity:.2;transition:opacity .45s}.sw.lit{opacity:1}
+.hero .seal{translate:0 calc(var(--p,0)*-50px)}
+.hero h1>.mk:first-child{translate:calc(var(--p,0)*-70px) 0}.hero h1>.mk:last-child{translate:calc(var(--p,0)*70px) 0}
+.mq div{translate:calc(var(--sp,0)*-1500px) 0}
+#tabs{translate:calc((1 - var(--in,1))*50px) 0;opacity:calc(.2 + var(--in,1)*.8)}
+.sp .ph>i{scale:calc(1.02 + var(--p,.5)*.1)}.sp .ph>div{translate:calc((var(--p,.5) - .5)*-50px) 0}
+.tr .w h2{translate:calc((var(--p,.5) - .5)*-100px) 0}.tbg>.ph>i{scale:calc(1.05 + var(--p,.5)*.18)}
+.bd h2{letter-spacing:calc((1 - var(--in,1))*.14em)}.bd>.ph>i{filter:saturate(calc(.4 + var(--in,1)*.6))}
+.gl .gi{translate:calc((var(--p,.5) - .5)*var(--kx,0)*1px) calc((var(--p,.5) - .5)*var(--k,0)*1px)}.gl .gi:nth-child(odd){--kx:60}.gl .gi:nth-child(even){--kx:-60}
+.ig .ic.rv{transform:perspective(900px) rotateX(20deg) translateY(40px);transform-origin:50% 100%}.ig .ic.rv.in{transform:none}
+#rf>div{opacity:0;translate:0 26px;transition:opacity .8s var(--e) calc(.15s + var(--i,0)*.08s),translate .8s var(--e) calc(.15s + var(--i,0)*.08s)}#rf.in>div{opacity:1;translate:0 0}
+footer .lg{rotate:calc(var(--p,.5)*300deg)}
+#rail{position:fixed;right:1.4rem;top:50%;translate:0 -50%;z-index:40;display:flex;flex-direction:column;gap:.9rem}
+#rail a{position:relative;width:10px;height:10px;border-radius:50%;border:1.5px solid var(--a);transition:background .3s,scale .3s var(--e)}#rail a.act{background:var(--a);scale:1.4}
+#rail a::before{content:attr(data-t);position:absolute;right:22px;top:50%;translate:8px -50%;opacity:0;white-space:nowrap;font-size:.8rem;color:var(--c);background:rgba(42,26,16,.92);padding:.25rem .7rem;border-radius:99px;pointer-events:none;transition:opacity .3s,translate .3s var(--e)}#rail a:hover::before{opacity:1;translate:0 -50%}
+@media(max-width:900px){#rail{display:none}}
+@media(max-width:760px){.hero h1>.mk:nth-child(n){translate:none}}
+@media(prefers-reduced-motion:reduce){.sw{opacity:1!important}#rf>div{opacity:1!important;translate:none!important}}
+</style><noscript><style>.rv,.mk>span,.wd>b,.di{opacity:1!important;transform:none!important}.sp .ph,.gl .gi,.bd,.fl,.sm{clip-path:none!important}.hs{opacity:1}#rf>div{opacity:1!important;translate:none!important}</style></noscript>
+</head>
+<body>
+<div id="bk" aria-hidden="true"><div class="ph bks on" data-k="bk1" data-l="fond fixe 1 : montagne, neige ou ambiance chalet"><i></i></div><div class="ph bks" data-k="bk2" data-l="fond fixe 2 : montagne, neige ou ambiance chalet"><i></i></div><div class="ph bks" data-k="bk3" data-l="fond fixe 3 : montagne, neige ou ambiance chalet"><i></i></div><div class="ph bks" data-k="bk4" data-l="fond fixe 4 : montagne, neige ou ambiance chalet"><i></i></div></div>
+<header><a href="#top"><img class="lg" src="logo.png" alt="Le Chardon Bleu by La Marmotte Affamée"></a>
+<nav><a href="#restaurant">Le restaurant</a><a href="#carte">La carte</a><a href="#specialites">Spécialités</a><a href="#terrasse">Terrasse</a><a href="#galerie">Galerie</a><a href="#infos">Infos</a><a href="#reservation">Réserver</a></nav>
+<button class="bg" aria-label="Menu"><i></i></button></header>
+
+<section class="hero" id="top">
+<div class="hbg" data-p=".25"><div class="ph hs on" data-k="hero" data-l="vue d’ensemble : front de neige ou terrasse"><i></i></div><div class="ph hs" data-k="hero2" data-l="un plat signature"><i></i></div><div class="ph hs" data-k="hero3" data-l="ambiance chalet ou après-ski"><i></i></div></div>
+<div class="lt"></div>
+<div class="hc">
+<img class="seal" src="logo.png" alt="Logo de la Marmotte Affamée">
+<div><span class="eb rv">Le Chardon Bleu by La Marmotte Affamée</span><h1><span class="mk"><span style="--d:.2s">Venez hiberner avec nous,</span></span><span class="mk"><span style="--d:.4s">on s’occupe du reste.</span></span></h1>
+<p class="rv" style="--d:.9s">Spécialités savoyardes et crêpes gourmandes, au front de neige de Valmeinier 1800. Après le ski, l’arrêt qui s’impose.</p>
+<div class="bt rv" style="--d:1.1s"><a class="btn" href="#carte">Découvrir la carte</a><a class="btn g" href="#reservation">Réserver une table</a></div></div></div>
+<div class="sd"></div></section>
+<div class="mq" id="mq" aria-hidden="true"></div>
+
+<section id="restaurant"><div class="w two">
+<div class="pw rv"><div class="ph tall" data-k="resto" data-l="Photo provisoire : salle ou ambiance chalet, à remplacer"><i></i></div><div class="ph sm" data-k="resto2" data-l="détail : plat, comptoir ou décor"><i></i></div><img class="seal" src="logo.png" alt=""></div>
+<div><h2 class="mk"><span>Les skis encore aux pieds, l’appétit déjà à table</span></h2>
+<p class="rv" data-hl>Au front de neige de Valmeinier 1800, la Marmotte Affamée vous ouvre sa porte : une cuisine maison, des spécialités savoyardes, des crêpes qui réchauffent, et cette vue sur la montagne dont on ne se lasse pas. Entre amis ou en famille, installez-vous : on s’occupe du reste.</p>
+<div class="ft"><div class="rv" style="--d:.1s"><b>Cuisine maison</b><span>Des plats faits avec envie, à la montagnarde.</span></div><div class="rv" style="--d:.25s"><b>Vue montagne</b><span>Les sommets en face, dès la première bouchée.</span></div><div class="rv" style="--d:.4s"><b>Après-ski</b><span>Le bon réflexe en descendant des pistes.</span></div></div></div></div></section>
+
+<section class="bd" id="b1"><div class="ph" data-p=".15" data-k="band1" data-l="ambiance : neige, lumière de fin de journée"><i></i></div><h2 class="mk"><span>Après la neige, la table.</span></h2></section>
+<section id="carte" class="cr"><div class="w">
+<h2 class="mk"><span>La carte, version montagne</span></h2><p class="rv">Un plat qui réchauffe, une crêpe qui fait sourire : choisissez votre rayon et laissez-vous tenter.</p>
+<span class="demo">Données de démonstration : plats et prix à remplacer par la vraie carte</span>
+<div id="tabs"></div><div id="dishes"></div></div></section>
+
+<section id="specialites"><div class="w">
+<h2 class="mk"><span>Les spécialités</span></h2>
+<p class="rv" data-hl style="max-width:48ch">Spécialités savoyardes et crêpes : ici, on cuisine pour celles et ceux qui ont faim d’air pur… et de gourmandise.</p>
+<div class="sp">
+<article class="ph rv" data-k="s1" data-l="Photo provisoire : spécialité savoyarde" style="--d:0s"><i></i><div><h3>Les savoyardes</h3><p>Le réconfort des chalets, bien chaud, à partager après la glisse.</p></div></article>
+<article class="ph rv" data-k="s2" data-l="Photo provisoire : crêpes" style="--d:.15s"><i></i><div><h3>Les crêpes</h3><p>Dorées, gourmandes, parfaites pour finir en douceur.</p></div></article>
+<article class="ph rv" data-k="s3" data-l="Photo provisoire : à définir avec le restaurateur" style="--d:.3s"><i></i><div><h3>La pause d’après-ski</h3><p>Une petite faim, un verre, et la montagne en face.</p></div></article>
+</div></div></section>
+
+<section id="terrasse" class="tr"><div class="tbg" data-p=".2"><div class="ph" style="position:absolute;inset:0" data-k="terrasse" data-l="Photo provisoire : terrasse et montagnes, à remplacer"><i></i></div></div>
+<div class="ph fl rv" data-k="terrasse2" data-l="vue depuis la terrasse"><i></i></div>
+<div class="w"><h2 class="mk"><span>La terrasse, face à la neige</span></h2>
+<p class="rv" data-hl>Posez les skis, installez-vous face aux pistes et laissez la montagne faire le décor : la lumière d’hiver, les sommets en toile de fond et la joyeuse agitation de la station, juste à côté.</p>
+<div class="ch"><div class="rv"><b>Vue montagne</b><span>Les sommets, sans effort.</span></div><div class="rv" style="--d:.12s"><b>Front de neige</b><span>À deux pas des pistes.</span></div><div class="rv" style="--d:.24s"><b>Terrasse</b><span>Du grand air et de la lumière.</span></div><div class="rv" style="--d:.36s"><b>Après-ski</b><span>L’arrêt qui s’impose.</span></div></div></div></section>
+
+<section id="galerie" class="cr"><div class="w">
+<h2 class="mk"><span>Un avant-goût en images</span></h2>
+<p class="rv">Touchez une photo pour la voir en grand.</p>
+<div class="gl">
+<button class="ph gi w2 h2 rv" data-k="g1" data-l="Photo provisoire 1 : le restaurant"><i></i></button>
+<button class="ph gi rv" data-k="g2" data-l="Photo provisoire 2 : un plat" style="--d:.1s"><i></i></button>
+<button class="ph gi rv" data-k="g3" data-l="Photo provisoire 3 : la neige" style="--d:.2s"><i></i></button>
+<button class="ph gi w2 rv" data-k="g4" data-l="Photo provisoire 4 : la terrasse" style="--d:.1s"><i></i></button>
+<button class="ph gi rv" data-k="g5" data-l="Photo provisoire 5 : crêpes"><i></i></button>
+<button class="ph gi rv" data-k="g6" data-l="Photo provisoire 6 : ambiance" style="--d:.1s"><i></i></button>
+</div></div></section>
+
+<section class="bd" id="b2"><div class="ph" data-p=".15" data-k="band2" data-l="ambiance : terrasse, convivialité"><i></i></div><h2 class="mk"><span>Les skis au repos, l’appétit en éveil.</span></h2></section>
+<section id="infos"><div class="w"><h2 class="mk"><span>Venir nous voir</span></h2>
+<div class="ig">
+<div class="ic rv"><h3>Adresse</h3><a data-f="adr"></a></div>
+<div class="ic rv" style="--d:.1s"><h3>Téléphone</h3><a data-f="tel"></a></div>
+<div class="ic rv" style="--d:.2s"><h3>E-mail</h3><a data-f="mail"></a></div>
+<div class="ic rv" style="--d:.3s"><h3>Instagram</h3><a href="https://www.instagram.com/le_chardonbleu/" target="_blank" rel="noopener">@le_chardonbleu</a></div>
+<div class="ic rv" style="--d:.4s"><h3>Horaires</h3><span data-f="hor"></span></div>
+<div class="ic rv" style="--d:.5s"><h3>Itinéraire</h3><a data-f="adr" class="btn" id="it">Ouvrir dans Plans</a></div>
+</div></div></section>
+
+<section id="reservation" class="cr"><div class="w"><h2 class="mk"><span>On vous garde une table au chaud</span></h2>
+<p class="rv">Dites-nous quand vous arrivez, on s’occupe du reste.</p><p class="demo">Démonstration : aucune demande n’est envoyée pour le moment.</p>
+<form id="rf" class="rv">
+<div><label for="n">Nom</label><input id="n" name="n" required></div>
+<div><label for="t">Téléphone</label><input id="t" name="t" type="tel" required></div>
+<div><label for="d">Date</label><input id="d" name="d" type="date" required></div>
+<div><label for="h">Heure souhaitée</label><input id="h" name="h" type="time" required></div>
+<div><label for="k">Nombre de personnes</label><select id="k" name="k"></select></div>
+<div><label for="m">E-mail</label><input id="m" name="m" type="email"></div>
+<div class="f"><label for="x">Message</label><textarea id="x" name="x" rows="3"></textarea></div>
+<div class="f"><button class="btn" type="submit">Simuler la demande</button></div></form>
+<div id="rs" role="status"></div></div></section>
+
+<footer><div class="fg"><img class="lg" src="logo.png" alt="Le Chardon Bleu">
+<div><h3>Le Chardon Bleu</h3><a data-f="adr" style="pointer-events:none"></a><a data-f="tel"></a><a data-f="mail"></a><a href="https://www.instagram.com/le_chardonbleu/" target="_blank" rel="noopener">Instagram</a></div>
+<div><h3>Navigation</h3><a href="#carte">La carte</a><a href="#galerie">Galerie</a><a href="#reservation">Réserver</a><a href="#admin" id="oa">Espace admin (démo)</a>
+<details><summary>Mentions légales</summary>À compléter : éditeur, hébergeur, données personnelles.</details></div></div>
+<small>© Le Chardon Bleu by La Marmotte Affamée — site en phase de validation frontend</small></footer>
+
+<div id="lb"><div id="lbi"><span id="lbc"></span></div></div>
+<div id="ts"></div>
+<div id="adm"><div id="an"></div><div id="ac"></div></div>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const e=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+/* ================= PHOTOS =================
+   Déposez vos images dans le dossier photos/ sous ces noms, ou modifiez les chemins ci-dessous (jpg, webp, png).
+   Tant qu'un fichier est absent, un cadre « Photo à ajouter » indique le nom attendu. */
+const IMG={
+hero:'photos/hero.jpg',hero2:'photos/hero-2.jpg',hero3:'photos/hero-3.jpg', // diaporama d'ouverture (paysage, plein écran)
+resto:'photos/restaurant.jpg',resto2:'photos/restaurant-detail.jpg',        // section restaurant (portrait + détail)
+band1:'photos/ambiance-1.jpg',band2:'photos/ambiance-2.jpg',                 // bandeaux plein écran
+bk1:'photos/fond-1.jpg',bk2:'photos/fond-2.jpg',bk3:'photos/fond-3.jpg',bk4:'photos/fond-4.jpg', // fonds fixes qui se fondent au scroll
+s1:'photos/specialite-1.jpg',s2:'photos/specialite-2.jpg',s3:'photos/specialite-3.jpg',
+terrasse:'photos/terrasse.jpg',terrasse2:'photos/terrasse-2.jpg',
+g1:'photos/galerie-1.jpg',g2:'photos/galerie-2.jpg',g3:'photos/galerie-3.jpg',g4:'photos/galerie-4.jpg',g5:'photos/galerie-5.jpg',g6:'photos/galerie-6.jpg'
+};
+const INFO={adr:'65 chemin de Pré Aynard, Front de neige, Valmeinier 1800, 73450 Valmeinier',tel:'04 79 59 20 89',mail:'restaurant.lechardonbleu@orange.fr',hor:'Horaires à confirmer par le restaurant'};
+let CATS=['Spécialités savoyardes','Fondues','Raclettes','Plats traditionnels','Crêpes','Desserts','Boissons'],DISH=[],cur=0;
+CATS.forEach((c,i)=>['A','B'].forEach(x=>DISH.push({id:i+x,c,n:c+' — exemple '+x,d:'Description à renseigner par le restaurateur.',p:'00,00 €',al:'à renseigner'})));
+let REQ=[{n:'Exemple (démo)',t:'06 00 00 00 00',d:'2026-12-20',h:'19:30',k:4}];
+function toast(t){const s=$('#ts');s.textContent=t;s.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>s.classList.remove('on'),1800)}
+function img(){$$('.ph[data-k]').forEach(p=>{const u=IMG[p.dataset.k],i=$('i',p);if(u){i.style.backgroundImage='url("'+u+'")';p.classList.add('has')}else{i.style.backgroundImage='';p.classList.remove('has')}})}
+function info(){$$('[data-f]').forEach(a=>{const k=a.dataset.f;a.textContent=INFO[k];if(k=='tel')a.href='tel:+33'+INFO.tel.replace(/\s/g,'').slice(1);if(k=='mail')a.href='mailto:'+INFO.mail;if(k=='adr'&&a.tagName=='A')a.href='https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(INFO.adr);if(a.id=='it')a.textContent='Ouvrir l’itinéraire'})}
+function tabs(){$('#tabs').innerHTML=CATS.map((c,i)=>'<button class="'+(i==cur?'on':'')+'" data-i="'+i+'">'+e(c)+'</button>').join('');list()}
+function list(){const L=$('#dishes');L.classList.remove('in');L.innerHTML=DISH.filter(d=>d.c==CATS[cur]).map((d,i)=>'<div class="di" style="--d:'+i*.08+'s"><div><h3>'+e(d.n)+'</h3><span>'+e(d.p)+'</span></div><p>'+e(d.d)+'</p><small>Allergènes : '+e(d.al)+'</small></div>').join('')||'<p>Aucun plat dans cette catégorie.</p>';void L.offsetWidth;L.classList.add('in')}
+$('#tabs').onclick=ev=>{const b=ev.target.closest('button');if(b){cur=+b.dataset.i;tabs()}};
+/* marquee, neige, couverts */
+$('#mq').innerHTML='<div>'+'Venez hiberner avec nous ✦ Spécialités savoyardes ✦ Crêpes ✦ Valmeinier 1800 ✦ Front de neige ✦ '.repeat(12)+'</div>';
+$('#k').innerHTML=Array.from({length:12},(_,i)=>'<option>'+(i+1)+' pers.</option>').join('');$('#d').min=new Date().toISOString().slice(0,10);
+/* reveal + parallaxe + header */
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.15,rootMargin:"0px 0px -8% 0px"});
+$$('.rv,.mk').forEach(x=>io.observe(x));
+let tk=0;function sc(){$('header').classList.toggle('sc',scrollY>40);if(!RM)$$('[data-p]').forEach(x=>{const r=x.parentElement.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight)x.style.transform='translateY('+(-r.top*x.dataset.p).toFixed(1)+'px)'});tk=0}
+addEventListener('scroll',()=>tk||(tk=requestAnimationFrame(sc)),{passive:true});
+/* menu mobile */
+$('.bg').onclick=()=>$('header').classList.toggle('open');$$('nav a').forEach(a=>a.onclick=()=>$('header').classList.remove('open'));
+/* galerie */
+$$('.gi').forEach(g=>g.onclick=()=>{const u=IMG[g.dataset.k];$('#lbi').style.backgroundImage=u?'url("'+u+'")':'';$('#lbc').textContent=u?'':g.dataset.l;$('#lb').className='on'});
+$('#lb').onclick=()=>$('#lb').className='';
+addEventListener('keydown',ev=>{if(ev.key=='Escape'){$('#lb').className='';$('#adm').classList.remove('on')}});
+/* réservation simulée */
+$('#rf').onsubmit=ev=>{ev.preventDefault();const f=new FormData(ev.target);REQ.unshift({n:f.get('n'),t:f.get('t'),d:f.get('d'),h:f.get('h'),k:f.get('k')});const r=$('#rs');r.textContent='Simulation : votre demande n’a pas été envoyée au restaurant. Pour réserver, appelez le '+INFO.tel+'.';r.className='on';ev.target.reset()};
+/* admin de démonstration */
+const TB=['Tableau de bord','Plats','Catégories','Photos','Horaires et infos','Réservations'];let AT=TB[0];
+function adm(){$('#an').innerHTML='<button class="x" id="cl">✕ Fermer</button>'+TB.map(t=>'<button class="'+(t==AT?'on':'')+'">'+t+'</button>').join('');
+let h='<h2>'+AT+'</h2><p style="opacity:.7;margin:.4rem 0 1.2rem">Démonstration : données simulées, sans authentification ni sauvegarde.</p>';
+if(AT==TB[0])h+='<div class="kp"><div><b>'+DISH.length+'</b>plats</div><div><b>'+CATS.length+'</b>catégories</div><div><b>'+REQ.length+'</b>demandes</div></div>';
+if(AT=='Plats')h+=DISH.map(d=>'<div class="ar" data-id="'+d.id+'"><input data-a="n" value="'+e(d.n)+'"><input data-a="p" value="'+e(d.p)+'"><select data-a="c">'+CATS.map(c=>'<option '+(c==d.c?'selected':'')+'>'+e(c)+'</option>').join('')+'</select><input data-a="d" value="'+e(d.d)+'"><input data-a="al" value="'+e(d.al)+'"><button class="x" data-x="'+d.id+'" aria-label="Supprimer">✕</button></div>').join('')+'<button class="btn" id="ad">Ajouter un plat</button>';
+if(AT=='Catégories')h+=CATS.map((c,i)=>'<div class="ar"><input data-ci="'+i+'" value="'+e(c)+'"><button class="x" data-cx="'+i+'" aria-label="Supprimer">✕</button></div>').join('')+'<button class="btn" id="ak">Ajouter une catégorie</button>';
+if(AT=='Photos')h+='<p style="margin-bottom:1rem">Collez le chemin d’une photo placée dans le dossier du site (ex. photos/hero.jpg) : elle remplace le cadre provisoire.</p>'+[...new Set($$('.ph[data-k]').map(p=>p.dataset.k))].map(k=>'<div class="ar"><label style="flex:0 0 90px">'+k+'</label><input data-im="'+k+'" value="'+e(IMG[k]||'')+'" placeholder="photos/'+k+'.jpg"></div>').join('');
+if(AT==TB[4])h+=[['adr','Adresse'],['tel','Téléphone'],['mail','E-mail'],['hor','Horaires']].map(([k,l])=>'<div style="margin-bottom:1rem"><label>'+l+'</label><input data-ik="'+k+'" value="'+e(INFO[k])+'"></div>').join('');
+if(AT=='Réservations')h+=REQ.map(r=>'<div class="kp"><div>'+e(r.n)+' — '+e(r.t)+'<br>'+e(r.d)+' à '+e(r.h)+', '+e(r.k)+'</div></div>').join('');
+$('#ac').innerHTML=h}
+$('#oa').onclick=()=>{$('#adm').classList.add('on');adm()};if(location.hash=='#admin')$('#oa').click();
+$('#an').onclick=ev=>{const b=ev.target.closest('button');if(!b)return;if(b.id=='cl')$('#adm').classList.remove('on');else{AT=b.textContent;adm()}};
+$('#ac').onchange=ev=>{const t=ev.target,r=t.closest('[data-id]');
+if(r){const d=DISH.find(x=>x.id==r.dataset.id);d[t.dataset.a]=t.value;tabs()}
+else if(t.dataset.ci!=null){const o=CATS[t.dataset.ci];CATS[t.dataset.ci]=t.value;DISH.forEach(d=>{if(d.c==o)d.c=t.value});tabs()}
+else if(t.dataset.ik){INFO[t.dataset.ik]=t.value;info()}
+else if(t.dataset.im){IMG[t.dataset.im]=t.value.trim();img()}
+toast('Modifié (simulation)')};
+$('#ac').onclick=ev=>{const b=ev.target.closest('button');if(!b)return;
+if(b.dataset.x){DISH=DISH.filter(d=>d.id!=b.dataset.x)}
+else if(b.id=='ad'){DISH.push({id:'n'+Date.now(),c:CATS[cur],n:'Nouveau plat',d:'Description à renseigner.',p:'00,00 €',al:'à renseigner'})}
+else if(b.dataset.cx){const c=CATS.splice(b.dataset.cx,1)[0];DISH=DISH.filter(d=>d.c!=c);cur=0}
+else if(b.id=='ak'){CATS.push('Nouvelle catégorie')}
+else return;tabs();adm();toast('Modifié (simulation)')};
+tabs();info();img();sc();
+</script>
+<script id="m2js">
+/* ===== PHASE 2 — moteur d'animation natif : IntersectionObserver (déclencheurs) + un seul rAF (variables de scroll) ===== */
+const cl=x=>Math.max(0,Math.min(1,x));
+function split(el,ch,base){let i=0;const t=el.textContent;el.innerHTML='<span class="vh">'+t+'</span>'+t.split(' ').map(w=>'<i class="wd" aria-hidden="true">'+(ch?[...w].map(c=>'<b style="--d:'+(base+i++*.035).toFixed(2)+'s">'+c+'</b>').join(''):'<b style="--d:'+(i++*.07).toFixed(2)+'s">'+w+'</b>')+'</i>').join(' ');el.parentElement.classList.add('sx')}
+$$('h2.mk>span').forEach(s=>split(s,0));$$('.hero h1 .mk>span').forEach((s,i)=>split(s,1,.4+i*.55));
+const HL=$$('[data-hl]').map(el=>{el.innerHTML=el.textContent.split(' ').map(w=>'<span class="sw">'+w+'</span>').join(' ');return[el,$$('.sw',el)]});
+const SEC=$$('section,footer'),vis=new Set();
+$$('section:not(.hero):not(.tr):not(#restaurant):not(.bd),footer').forEach(s=>s.classList.add('rg'));
+const vo=new IntersectionObserver(es=>{es.forEach(x=>x.isIntersecting?vis.add(x.target):vis.delete(x.target));tk||(tk=requestAnimationFrame(sc))},{rootMargin:'30% 0px'});SEC.forEach(s=>vo.observe(s));
+function sc(){const y=scrollY,H=innerHeight;$('header').classList.toggle('sc',y>40);
+if(!RM){$$('[data-p]').forEach(x=>{const r=x.parentElement.getBoundingClientRect();if(r.bottom>0&&r.top<H)x.style.transform='translateY('+(-r.top*x.dataset.p).toFixed(1)+'px)'});
+vis.forEach(s=>{const r=s.getBoundingClientRect(),p=s.classList.contains('hero')?-r.top/r.height:(H-r.top)/(H+r.height);s.style.setProperty('--p',cl(p).toFixed(3));s.style.setProperty('--in',cl((H-r.top)/H).toFixed(3))});
+HL.forEach(([el,W])=>{const r=el.getBoundingClientRect();if(r.bottom<0||r.top>H)return;const n=Math.round(cl((H*.9-r.top)/(H*.5))*W.length);W.forEach((w,i)=>w.classList.toggle('lit',i<n))});
+document.documentElement.style.setProperty('--sp',(y/Math.max(1,document.documentElement.scrollHeight-H)).toFixed(4))}tk=0}
+SEC.forEach(s=>vis.add(s));sc();vis.clear();
+/* décors : barre de progression et mot géant typographique */
+document.body.insertAdjacentHTML('afterbegin','<div id="pb"></div>');
+$('#specialites').insertAdjacentHTML('afterbegin','<div class="bgt" aria-hidden="true">Savoyardes</div>');
+/* carte : pastille glissante, sortie/entrée séquencées, compteur de prix, halo au survol */
+function count(el){const t=el.textContent,m=t.match(/(\d+)([,.](\d+))?/);if(!m||RM)return;const d=m[3]?m[3].length:0,v=parseFloat(m[1]+'.'+(m[3]||0)),s=performance.now();(function f(n){const k=Math.min(1,(n-s)/700);el.textContent=t.replace(m[0],(v*(1-Math.pow(1-k,3))).toFixed(d).replace('.',',').padStart(m[0].length,'0'));if(k<1)requestAnimationFrame(f)})(s)}
+function mv(){const B=$$('#tabs button'),b=B[cur],p=$('#tp');B.forEach((x,i)=>x.classList.toggle('on',i==cur));if(b&&p)p.style.cssText='width:'+b.offsetWidth+'px;height:'+b.offsetHeight+'px;transform:translate('+b.offsetLeft+'px,'+b.offsetTop+'px)'}
+function tabs(){$('#tabs').innerHTML='<i id="tp"></i>'+CATS.map((c,i)=>'<button data-i="'+i+'">'+e(c)+'</button>').join('');mv();list()}
+function list(){const L=$('#dishes'),old=$$('.di',L);clearTimeout(list.t);
+const go=()=>{L.classList.remove('in');L.innerHTML=DISH.filter(d=>d.c==CATS[cur]).map((d,i)=>'<div class="di" style="--d:'+i*.08+'s"><div><h3>'+e(d.n)+'</h3><span class="pr">'+e(d.p)+'</span></div><p>'+e(d.d)+'</p><small>Allergènes : '+e(d.al)+'</small></div>').join('')||'<p>Aucun plat dans cette catégorie.</p>';void L.offsetWidth;L.classList.add('in');$$('.pr',L).forEach(count)};
+if(old.length&&!RM){old.forEach((d,i)=>{d.style.transitionDelay=i*.03+'s';d.classList.add('out')});list.t=setTimeout(go,360)}else go()}
+$('#tabs').onclick=ev=>{const b=ev.target.closest('button');if(b){cur=+b.dataset.i;mv();list()}};
+$('#dishes').addEventListener('pointermove',ev=>{const d=ev.target.closest('.di');if(d){const r=d.getBoundingClientRect();d.style.setProperty('--mx',ev.clientX-r.left+'px');d.style.setProperty('--my',ev.clientY-r.top+'px')}});
+addEventListener('resize',mv);addEventListener('load',mv);
+/* boutons : remplissage depuis le curseur + léger effet magnétique (souris uniquement) */
+document.addEventListener('pointermove',ev=>{const b=ev.target.closest&&ev.target.closest('.btn');if(b){const r=b.getBoundingClientRect();b.style.setProperty('--bx',ev.clientX-r.left+'px');b.style.setProperty('--by',ev.clientY-r.top+'px');if(ev.pointerType=='mouse'&&!RM)b.style.translate=(ev.clientX-r.left-r.width/2)*.15+'px '+(ev.clientY-r.top-r.height/2)*.25+'px'}});
+document.addEventListener('pointerout',ev=>{const b=ev.target.closest&&ev.target.closest('.btn');if(b)b.style.translate=''});
+/* menu : délais en cascade + lien actif */
+const nl=$$('nav a');nl.forEach((a,i)=>a.style.setProperty('--n',i));
+const spy=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)nl.forEach(a=>a.classList.toggle('act',a.getAttribute('href')=='#'+x.target.id))}),{rootMargin:'-45% 0px -50% 0px'});$$('section[id]').forEach(s=>spy.observe(s));
+/* lightbox : ouverture circulaire depuis la vignette, précédent/suivant, clavier, swipe */
+const GI=$$('.gi'),LB=$('#lb');let gi=0,tx=0;
+LB.innerHTML='<button class="lc" aria-label="Fermer">✕</button><button class="ln p" data-d="-1" aria-label="Précédente">‹</button><div id="lbi"><span id="lbc"></span></div><button class="ln n" data-d="1" aria-label="Suivante">›</button><div id="lbn"></div>';
+function lbShow(i,dir){gi=(i+GI.length)%GI.length;const g=GI[gi],u=g.classList.contains('has')?IMG[g.dataset.k]:'',s=$('#lbi');s.classList.remove('sw');s.style.setProperty('--dx',dir*70+'px');void s.offsetWidth;s.style.backgroundImage=u?'url("'+u+'")':'';$('#lbc').textContent=u?'':g.dataset.l;$('#lbn').textContent=(gi+1)+' / '+GI.length;s.classList.add('sw')}
+GI.forEach((g,i)=>g.onclick=()=>{const r=g.getBoundingClientRect();LB.style.setProperty('--ox',r.left+r.width/2+'px');LB.style.setProperty('--oy',r.top+r.height/2+'px');lbShow(i,0);LB.className='on'});
+LB.onclick=ev=>{const n=ev.target.closest('.ln');if(n)lbShow(gi+ +n.dataset.d,+n.dataset.d);else if(ev.target==LB||ev.target.closest('.lc'))LB.className=''};
+addEventListener('keydown',ev=>{if(LB.classList.contains('on')){if(ev.key=='ArrowRight')lbShow(gi+1,1);if(ev.key=='ArrowLeft')lbShow(gi-1,-1)}});
+LB.addEventListener('touchstart',ev=>tx=ev.touches[0].clientX,{passive:true});LB.addEventListener('touchend',ev=>{const d=ev.changedTouches[0].clientX-tx;if(Math.abs(d)>50)lbShow(gi-Math.sign(d),-Math.sign(d))});
+/* réservation simulée : état d'attente puis confirmation animée */
+$('#rf').onsubmit=ev=>{ev.preventDefault();const f=new FormData(ev.target),b=$('button[type=submit]',ev.target);b.classList.add('wt');b.textContent='Simulation en cours…';
+setTimeout(()=>{REQ.unshift({n:f.get('n'),t:f.get('t'),d:f.get('d'),h:f.get('h'),k:f.get('k')});const r=$('#rs');r.className='';void r.offsetWidth;r.textContent='✓ Simulation : votre demande n’a pas été envoyée au restaurant. Pour réserver, appelez le '+INFO.tel+'.';r.className='on';b.classList.remove('wt');b.textContent='Simuler la demande';ev.target.reset()},800)};
+/* photos : un cadre ne passe en « chargé » que si le fichier existe */
+function img(){$$('.ph[data-k]').forEach(p=>{const k=p.dataset.k,u=IMG[k],i=$('i',p);p.dataset.d=p.dataset.d||p.dataset.l.replace(/^Photo provisoire( \d+)? ?: ?/i,'').replace(/, à remplacer$/,'');p.classList.remove('has');i.style.backgroundImage='';p.dataset.l='Photo à ajouter : '+(u||'photos/'+k+'.jpg')+' ('+p.dataset.d+')';if(!u)return;const t=new Image();t.onload=()=>{if(IMG[k]!=u)return;i.style.backgroundImage='url("'+u+'")';p.classList.add('has');if(p.classList.contains('bks'))bk(bk.k||0)};t.src=u})}
+const HS=$$('.hs');setInterval(()=>{const L=HS.filter(x=>x.classList.contains('has'));if(L.length<2||document.hidden||RM)return;const c=L.findIndex(x=>x.classList.contains('on'));HS.forEach(x=>x.classList.remove('on'));L[(c+1)%L.length].classList.add('on')},6500);
+/* fond photographique fixe : fondu enchaîné d'une photo à l'autre selon la section visible */
+const BK=$$('.bks'),BM={restaurant:0,carte:1,specialites:2,terrasse:3,galerie:1,infos:2,reservation:0};
+function bk(k){bk.k=k;const L=BK.filter(b=>b.classList.contains('has'));BK.forEach(b=>b.classList.remove('on'));if(L.length)L[k%L.length].classList.add('on')}
+const bo=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting&&BM[x.target.id]!=null)bk(BM[x.target.id])}),{rootMargin:'-50% 0px -50% 0px'});$$('section[id]').forEach(x=>bo.observe(x));
+/* rail de sections + formulaire en cascade */
+const RL=[['restaurant','Le restaurant'],['carte','La carte'],['specialites','Spécialités'],['terrasse','Terrasse'],['galerie','Galerie'],['infos','Infos'],['reservation','Réserver']];
+document.body.insertAdjacentHTML('beforeend','<div id="rail" role="navigation" aria-label="Sections">'+RL.map(([i,t])=>'<a href="#'+i+'" data-t="'+t+'" aria-label="'+t+'"></a>').join('')+'</div>');
+const rl=$$('#rail a'),ro=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)rl.forEach(a=>a.classList.toggle('act',a.getAttribute('href')=='#'+x.target.id))}),{rootMargin:'-45% 0px -50% 0px'});$$('section[id]').forEach(x=>ro.observe(x));
+$$('#rf>div').forEach((d,i)=>d.style.setProperty('--i',i));
+img();tabs();sc();
+</script>
+</body></html>
 
